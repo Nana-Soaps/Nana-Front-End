@@ -1,7 +1,8 @@
-import { TOGGLE_CART_OPEN } from "../actions";
+import { TOGGLE_CART_OPEN, SET_CATEGORIES } from "../actions";
 
 const initialState = {
   cartOpen: false,
+  categories: [],
 };
 
 export const reducer = (state = initialState, action) => {
@@ -10,6 +11,12 @@ export const reducer = (state = initialState, action) => {
       return {
         ...state,
         cartOpen: action.payload,
+      };
+    }
+    case SET_CATEGORIES: {
+      return {
+        ...state,
+        categories: action.payload,
       };
     }
     default:

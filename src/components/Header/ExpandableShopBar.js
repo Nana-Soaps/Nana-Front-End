@@ -1,27 +1,26 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { connect } from "react-redux";
 
 function ExpandableShopBar(props) {
   const { shopBarOpen, toggleOpen } = props;
   return (
     <div className={`expandableShopBar ${shopBarOpen ? "shopBarOpen" : ""}`}>
-      <Link to="/shop">
-        <a onClick={toggleOpen}>Full Catalog</a>
-      </Link>
-      <Link to="/shop">
-        <a onClick={toggleOpen}>Body Bars</a>
-      </Link>
-      <Link to="/shop">
-        <a onClick={toggleOpen}>Face Bars</a>
-      </Link>
-      <Link to="/shop">
-        <a onClick={toggleOpen}>For Babies</a>
-      </Link>
-      <Link to="/shop">
-        <a onClick={toggleOpen}>Gift Boxes</a>
-      </Link>
+      {props.categories.map((category) => {
+        return (
+          <Link to={{ pathname: "/shop", state: { category: category } }}>
+            <a onClick={toggleOpen}>{category.category_name}</a>
+          </Link>
+        );
+      })}
     </div>
   );
 }
 
-export default ExpandableShopBar;
+const mapStateToProps = (state) => {
+  return {
+    ...state,
+  };
+};
+
+export default connect(mapStateToProps)(ExpandableShopBar);
