@@ -103,6 +103,9 @@ $dark-grey: #323029;
     width: 20%;
     padding: 1.5rem;
     margin-bottom: 10rem;
+    span {
+      color: black;
+    }
   }
   .text-wrap {
     display: flex;

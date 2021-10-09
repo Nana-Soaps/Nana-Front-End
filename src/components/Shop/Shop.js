@@ -10,6 +10,7 @@ function Shop(props) {
   const location = useLocation();
   const { category } = location.state;
   const [filterBarActive, setFilterBarActive] = useState(false);
+  console.log(category);
 
   const handleFilterBtn = () => {
     setFilterBarActive(() => !filterBarActive);
