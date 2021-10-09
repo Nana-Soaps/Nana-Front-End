@@ -12,18 +12,32 @@ function ShopBar(props) {
             shopBarOpen ? "shopBarOpen " : "shopBarClosed"
           }`}
         >
+          <li className="me-2" onClick={clickShop}>
+            <Link
+              to={{
+                pathname: "/shop",
+                state: {
+                  category: {
+                    category_name: "Full Catalog",
+                    products: props.products,
+                  },
+                },
+              }}
+              className="text-decoration-none"
+            >
+              <p className="text-dark">Full Catalog</p>
+            </Link>
+          </li>
           {props.categories.map((category) => {
             return (
-              <div>
-                <li className="me-2" onClick={clickShop}>
-                  <Link
-                    to={{ pathname: "/shop", state: { category: category } }}
-                    className="text-decoration-none"
-                  >
-                    <a className="text">{category.category_name}</a>
-                  </Link>
-                </li>
-              </div>
+              <li className="me-2" onClick={clickShop}>
+                <Link
+                  to={{ pathname: "/shop", state: { category: category } }}
+                  className="text-decoration-none"
+                >
+                  <p className="text-dark">{category.category_name}</p>
+                </Link>
+              </li>
             );
           })}
         </div>

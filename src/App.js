@@ -13,7 +13,7 @@ import "./styles/Header.scss";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Route, Switch } from "react-router-dom";
 import { connect } from "react-redux";
-import { setCategories } from "./actions";
+import { setCategories, setProducts } from "./actions";
 
 function App(props) {
   useEffect(() => {
@@ -27,6 +27,23 @@ function App(props) {
         console.dir(err);
       });
   }, []);
+
+  useEffect(() => {
+    if (props.categories[0]) {
+      const uniqueNames = [];
+      const products = props.categories.flatMap((category) => {
+        return category.products;
+      });
+      products.forEach((prod, i) => {
+        if (!uniqueNames.includes(prod.name)) {
+          uniqueNames.push(prod.name);
+        } else {
+          products.splice(i, 1);
+        }
+      });
+      props.setProducts(products);
+    }
+  }, [props.categories]);
 
   return (
     <div className="App">
@@ -59,4 +76,4 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps, { setCategories })(App);
+export default connect(mapStateToProps, { setCategories, setProducts })(App);
