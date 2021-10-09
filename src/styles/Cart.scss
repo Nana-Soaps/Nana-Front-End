@@ -35,6 +35,7 @@ $dark-grey: #4d4a43;
     width: 100%;
     height: 100vh;
   }
+
   .cartWrap {
     width: 0rem;
     height: 100vh;
@@ -42,7 +43,7 @@ $dark-grey: #4d4a43;
     background-color: $white;
     right: 0;
     top: 0;
-    transition: width 0.2s;
+    transition: width 1s;
     overflow: hidden;
 
     .cartHeader {
@@ -151,13 +152,17 @@ $dark-grey: #4d4a43;
       }
     }
   }
-}
-
-.cartPageWrap {
   .cartOpen {
+    transition: width 1s;
     width: 25rem;
   }
 }
+
+// .cartPageWrap {
+//   .cartOpen {
+//     width: 25rem;
+//   }
+// }
 
 @media screen and (max-width: 500px) {
   .cartPageWrap {

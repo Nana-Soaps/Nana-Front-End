@@ -1,9 +1,15 @@
-import { TOGGLE_CART_OPEN, SET_CATEGORIES, SET_PRODUCTS } from "../actions";
+import {
+  TOGGLE_CART_OPEN,
+  SET_CATEGORIES,
+  SET_PRODUCTS,
+  SET_BAG,
+} from "../actions";
 
 const initialState = {
   cartOpen: false,
   categories: [],
   products: [],
+  bag: [],
 };
 
 export const reducer = (state = initialState, action) => {
@@ -24,6 +30,12 @@ export const reducer = (state = initialState, action) => {
       return {
         ...state,
         products: action.payload,
+      };
+    }
+    case SET_BAG: {
+      return {
+        ...state,
+        bag: action.payload,
       };
     }
     default:

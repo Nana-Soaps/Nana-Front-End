@@ -31,13 +31,20 @@ function Cart(props) {
         </div>
         <div className="cartBody">
           {/* <p className="mt-3">This bag is currently empty</p> */}
+          {props.bag.map((product) => {
+            return <CartItem product={product} />;
+          })}
+          {/* <CartItem />
           <CartItem />
-          <CartItem />
-          <CartItem />
+          <CartItem /> */}
         </div>
       </div>
     </div>
   );
 }
-
-export default connect(null, { toggleCartOpen })(Cart);
+const mapStateToProps = (state) => {
+  return {
+    ...state,
+  };
+};
+export default connect(mapStateToProps, { toggleCartOpen })(Cart);

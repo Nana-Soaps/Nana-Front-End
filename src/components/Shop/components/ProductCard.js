@@ -2,9 +2,36 @@ import React from "react";
 import soapImg from "../../../assets/soap-item.png";
 import bagAdd from "../../../assets/bag-add.svg";
 import { Link } from "react-router-dom";
+import { connect } from "react-redux";
+import { setBag } from "../../../actions";
 
 function ProductCard(props) {
   const { product } = props;
+
+  const handleAddToBag = (e) => {
+    e.preventDefault();
+    let itemExists = false;
+    let currentProduct = null;
+    props.bag.forEach((item) => {
+      if (item.name == product.name) {
+        itemExists = true;
+        currentProduct = item;
+      }
+    });
+
+    if (itemExists) {
+      const newBag = props.bag.map((item) => {
+        if (item.name == currentProduct.name) {
+          item.quantity += 1;
+        }
+        return item;
+      });
+      console.log(newBag);
+      props.setBag(newBag);
+    } else {
+      props.setBag([...props.bag, { ...product, quantity: 1 }]);
+    }
+  };
   return (
     <div className="itemCard p-1">
       <div className="itemWrap">
@@ -21,7 +48,10 @@ function ProductCard(props) {
             <h5 className="name">{product.name}</h5>
             <h5 className="price">${product.price.toFixed(2)}</h5>
           </Link>
-          <div className="d-flex justify-content-center addToBagWrap">
+          <div
+            className="d-flex justify-content-center addToBagWrap"
+            onClick={handleAddToBag}
+          >
             <h5 className="me-2 addText">Add To Bag</h5>
             <img src={bagAdd} />
           </div>
@@ -30,5 +60,9 @@ function ProductCard(props) {
     </div>
   );
 }
-
-export default ProductCard;
+const mapStateToProps = (state) => {
+  return {
+    ...state,
+  };
+};
+export default connect(mapStateToProps, { setBag })(ProductCard);
