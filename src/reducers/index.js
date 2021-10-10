@@ -3,6 +3,7 @@ import {
   SET_CATEGORIES,
   SET_PRODUCTS,
   SET_BAG,
+  SET_ORDER,
 } from "../actions";
 
 const initialState = {
@@ -10,6 +11,7 @@ const initialState = {
   categories: [],
   products: [],
   bag: [],
+  order: null,
 };
 
 export const reducer = (state = initialState, action) => {
@@ -36,6 +38,12 @@ export const reducer = (state = initialState, action) => {
       return {
         ...state,
         bag: action.payload,
+      };
+    }
+    case SET_ORDER: {
+      return {
+        ...state,
+        order: action.payload,
       };
     }
     default:
