@@ -5,11 +5,13 @@ CheckoutConfirmation.propTypes = {};
 
 function CheckoutConfirmation(props) {
   return (
-    <div>
-      <h1>
-        Congratulations! Your payment has been submitted, and your order has
-        been confirmed.
-      </h1>
+    <div className="checkoutConfirmation py-5">
+      <div className="container">
+        <h3 className="mb-4">Congratulations!</h3>
+        <h3>
+          Your payment has been submitted, and your order has been confirmed.
+        </h3>
+      </div>
     </div>
   );
 }

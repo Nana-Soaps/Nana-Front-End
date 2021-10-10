@@ -1,11 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import CartSummary from "../CheckoutShipping/components/CartSummary";
 import Contact from "../CheckoutShipping/components/Contact";
-import BillingAddressCheckbox from "./components/BillingAddressCheckbox";
-import BillingAddress from "./components/BillingAddress";
 import "../../styles/CheckoutPayment.scss";
 import chevronLeftClose from "../../assets/chevron-left-close.svg";
 import { Link, useHistory } from "react-router-dom";
+import axios from "axios";
+import { connect } from "react-redux";
 import {
   CardElement,
   ElementsConsumer,
@@ -14,10 +14,57 @@ import {
 } from "@stripe/react-stripe-js";
 
 function CheckoutPayment(props) {
+  const [success, setSuccess] = useState(false); // if payment is successful we want to show something
   const history = useHistory();
-  const handleSubmit = () => {
-    console.log("submit");
-    history.push("/checkout/confirmation");
+  const stripe = useStripe();
+  const elements = useElements();
+
+  const CARD_OPTIONS = {
+    iconStyle: "solid",
+    style: {
+      base: {
+        iconColor: "#c4f0ff",
+      },
+      invalid: {
+        iconColor: "red",
+        color: "red",
+      },
+    },
+  };
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const { error, paymentMethod } = await stripe.createPaymentMethod({
+      type: "card",
+      card: elements.getElement(CardElement),
+    });
+
+    console.log(paymentMethod);
+
+    if (!error) {
+      try {
+        const { id } = paymentMethod;
+        const response = await axios
+          .post("http://localhost:5000/api/orders/payment", {
+            amount: 1500, //charge amount in cents
+            id,
+          })
+          .then((res) => {
+            console.log(res);
+          })
+          .catch((err) => {
+            console.log(err);
+          });
+
+        if (response.data.success) {
+          console.log("successful payment");
+          setSuccess(true);
+        }
+      } catch (err) {
+        console.log(err);
+      }
+    } else {
+      console.log(error.message);
+    }
   };
   const handleBack = () => {
     history.goBack();
@@ -31,9 +78,9 @@ function CheckoutPayment(props) {
             <h5 className="text-start">Cart Summary</h5>
             <CartSummary />
             <Contact />
-            <h5 className="text-start">Billing Address</h5>
+            {/* <h5 className="text-start">Billing Address</h5>
             <BillingAddressCheckbox />
-            <BillingAddress />
+            <BillingAddress /> */}
           </div>
         </form>
         <ElementsConsumer>
@@ -41,7 +88,7 @@ function CheckoutPayment(props) {
             <form className="payment-form m-auto mt-5" onSubmit={handleSubmit}>
               <h5 className="text-start">Payment</h5>
               <div className="paymentForm border">
-                <CardElement />
+                <CardElement options={CARD_OPTIONS} />
               </div>
 
               <div className="btnWrap mt-5">
@@ -59,9 +106,15 @@ function CheckoutPayment(props) {
             </form>
           )}
         </ElementsConsumer>
+        {success && <h1>Payment Successful!</h1>}
       </div>
     </div>
   );
 }
 
-export default CheckoutPayment;
+const mapStateToProps = (state) => {
+  return {
+    ...state,
+  };
+};
+export default connect(mapStateToProps)(CheckoutPayment);
