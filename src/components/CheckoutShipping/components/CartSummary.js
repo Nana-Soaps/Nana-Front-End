@@ -3,7 +3,7 @@ import CartSummaryItem from "./CartSummaryItem";
 
 function CartSummary(props) {
   return (
-    <div className="cartSummary mb-5">
+    <div className="cartSummary mb-2">
       <CartSummaryItem />
       <CartSummaryItem />
       <CartSummaryItem />

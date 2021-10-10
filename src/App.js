@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 import {
   Header,
@@ -10,14 +10,23 @@ import {
   Signup,
   CheckoutInformation,
   CheckoutShipping,
+  CheckoutPayment,
 } from "./components";
 import "./styles/Header.scss";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Route, Switch } from "react-router-dom";
 import { connect } from "react-redux";
 import { setCategories, setProducts } from "./actions";
+import { Elements } from "@stripe/react-stripe-js";
+import { stripePromise } from "./lib/stripe";
 
 function App(props) {
+  const [stripe, setStripe] = useState();
+
+  stripePromise.then((res) => {
+    setStripe(res);
+    console.log(stripe);
+  });
   useEffect(() => {
     axios
       .get("https://nanasoapsbackend.herokuapp.com/api/products/categories")
@@ -71,6 +80,11 @@ function App(props) {
         </Route>
         <Route exact path="/checkout/shipping">
           <CheckoutShipping />
+        </Route>
+        <Route exact path="/checkout/payment">
+          <Elements stripe={stripePromise}>
+            <CheckoutPayment />
+          </Elements>
         </Route>
       </Switch>
       {props.cartOpen && <Cart />}

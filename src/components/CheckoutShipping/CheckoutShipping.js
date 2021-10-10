@@ -2,6 +2,7 @@ import React from "react";
 import { useHistory } from "react-router-dom";
 import ShippingCheckbox from "./components/ShippingCheckbox";
 import CartSummary from "./components/CartSummary";
+import Contact from "./components/Contact";
 import "../../styles/CheckoutShipping.scss";
 import chevronLeftClose from "../../assets/chevron-left-close.svg";
 
@@ -13,13 +14,15 @@ function CheckoutShipping(props) {
   };
 
   const handlePayment = () => {
-    console.log("payment");
+    history.push("/checkout/payment");
   };
   return (
     <div className="checkoutShipping py-5">
       <div className="container">
-        <CartSummary />
         <form>
+          <h5 className="text-start">Cart Summary</h5>
+          <CartSummary />
+          <Contact />
           <h5 className="text-start">Shipping Options</h5>
           <ShippingCheckbox />
           <ShippingCheckbox />
@@ -32,7 +35,7 @@ function CheckoutShipping(props) {
               <p className="m-0 ms-2">Back</p>
             </div>
             <button className="continueBtn btn" onClick={handlePayment}>
-              Continue to Shipping
+              Continue to Payment
             </button>
           </div>
         </form>
