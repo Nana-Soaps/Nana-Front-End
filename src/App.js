@@ -11,6 +11,7 @@ import {
   CheckoutInformation,
   CheckoutShipping,
   CheckoutPayment,
+  CheckoutConfirmation,
 } from "./components";
 import "./styles/Header.scss";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -85,6 +86,9 @@ function App(props) {
           <Elements stripe={stripePromise}>
             <CheckoutPayment />
           </Elements>
+        </Route>
+        <Route exact path="/checkout/confirmation">
+          <CheckoutConfirmation />
         </Route>
       </Switch>
       {props.cartOpen && <Cart />}

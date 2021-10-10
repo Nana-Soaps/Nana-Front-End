@@ -9,3 +9,4 @@ export { default as Signup } from "./Signup/Signup";
 export { default as CheckoutInformation } from "./CheckoutInformation/CheckoutInformation";
 export { default as CheckoutShipping } from "./CheckoutShipping/CheckoutShipping";
 export { default as CheckoutPayment } from "./CheckoutPayment/CheckoutPayment";
+export { default as CheckoutConfirmation } from "./CheckoutConfirmation/CheckoutConfirmation";
