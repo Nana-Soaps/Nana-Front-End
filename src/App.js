@@ -8,6 +8,8 @@ import {
   Cart,
   Login,
   Signup,
+  CheckoutInformation,
+  CheckoutShipping,
 } from "./components";
 import "./styles/Header.scss";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -63,6 +65,12 @@ function App(props) {
         </Route>
         <Route exact path="/signup">
           <Signup />
+        </Route>
+        <Route exact path="/checkout/information">
+          <CheckoutInformation />
+        </Route>
+        <Route exact path="/checkout/shipping">
+          <CheckoutShipping />
         </Route>
       </Switch>
       {props.cartOpen && <Cart />}

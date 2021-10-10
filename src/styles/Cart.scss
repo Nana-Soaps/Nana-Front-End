@@ -151,10 +151,26 @@ $dark-grey: #4d4a43;
         // background-color: blue;
       }
     }
+    .subtotal {
+      display: flex;
+      height: 4rem;
+      margin-left: 1rem;
+      margin-right: 1rem;
+      justify-content: space-between;
+      align-items: center;
+      h5 {
+        margin: 0px;
+      }
+    }
   }
   .cartOpen {
-    transition: width 1s;
+    transition: width 0.2s;
     width: 25rem;
+  }
+  .checkoutBtn {
+    color: white;
+    margin-right: 1rem;
+    background-color: #9b7566;
   }
 }
 

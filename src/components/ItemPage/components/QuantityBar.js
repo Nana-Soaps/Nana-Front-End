@@ -3,9 +3,6 @@ import React from "react";
 function QuantityBar(props) {
   const { handleQuantity } = props;
 
-  const two = () => {
-    console.log("hi");
-  };
   return (
     <div className="quantityWrap py-2 mb-3">
       <h5 className="label">Quantity:</h5>

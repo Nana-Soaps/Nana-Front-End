@@ -6,3 +6,5 @@ export { default as ItemPage } from "./ItemPage/ItemPage";
 export { default as Cart } from "./Cart/Cart";
 export { default as Login } from "./Login/Login";
 export { default as Signup } from "./Signup/Signup";
+export { default as CheckoutInformation } from "./CheckoutInformation/CheckoutInformation";
+export { default as CheckoutShipping } from "./CheckoutShipping/CheckoutShipping";

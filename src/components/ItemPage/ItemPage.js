@@ -46,7 +46,7 @@ function ItemPage(props) {
     <div className="py-5 itemPage">
       <div className="container">
         <div className="contentWrap">
-          <div className="imgWrap border">
+          <div className="imgWrap border" style={{ overflow: "hidden" }}>
             <img
               src={`https://nana-soaps-products.s3.us-east-2.amazonaws.com/${product.product_id}`}
               alt={`${product.name}`}
