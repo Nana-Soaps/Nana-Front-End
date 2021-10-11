@@ -62,7 +62,7 @@ function CheckoutPayment(props) {
           history.push("/checkout/confirmation");
         })
         .catch((err) => {
-          console.log(err);
+          console.dir(err);
         });
     } else {
       console.log(error.message);
