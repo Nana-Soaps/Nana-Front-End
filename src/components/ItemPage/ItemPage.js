@@ -3,7 +3,8 @@ import TraitsBar from "./components/TraitsBar";
 import QuantityBar from "./components/QuantityBar";
 import { useLocation } from "react-router-dom";
 import { connect } from "react-redux";
-import { setBag } from "../../actions";
+import { setBag, toggleCartOpen } from "../../actions";
+import { disableBodyScroll } from "body-scroll-lock";
 
 import "../../styles/ItemPage.scss";
 import soapImg from "../../assets/soap-item.png";
@@ -41,6 +42,8 @@ function ItemPage(props) {
     } else {
       props.setBag([...props.bag, { ...product, quantity: quantity }]);
     }
+    props.toggleCartOpen(true);
+    disableBodyScroll(true);
   };
   return (
     <div className="py-5 itemPage">
@@ -75,4 +78,4 @@ const mapStateToProps = (state) => {
     ...state,
   };
 };
-export default connect(mapStateToProps, { setBag })(ItemPage);
+export default connect(mapStateToProps, { setBag, toggleCartOpen })(ItemPage);

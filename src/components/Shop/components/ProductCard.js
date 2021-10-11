@@ -3,7 +3,8 @@ import soapImg from "../../../assets/soap-item.png";
 import bagAdd from "../../../assets/bag-add.svg";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
-import { setBag } from "../../../actions";
+import { setBag, toggleCartOpen } from "../../../actions";
+import { disableBodyScroll } from "body-scroll-lock";
 
 function ProductCard(props) {
   const { product } = props;
@@ -31,6 +32,8 @@ function ProductCard(props) {
     } else {
       props.setBag([...props.bag, { ...product, quantity: 1 }]);
     }
+    props.toggleCartOpen(true);
+    disableBodyScroll(true);
   };
   return (
     <div className="itemCard p-1">
@@ -72,4 +75,6 @@ const mapStateToProps = (state) => {
     ...state,
   };
 };
-export default connect(mapStateToProps, { setBag })(ProductCard);
+export default connect(mapStateToProps, { setBag, toggleCartOpen })(
+  ProductCard
+);
