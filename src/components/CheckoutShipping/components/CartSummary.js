@@ -38,13 +38,13 @@ function CartSummary(props) {
         </div>
         <div className="d-flex justify-content-between align-items-center lineItem px-3">
           <p className="m-0">Taxes</p>
-          <p className="m-0 price">${subtotal * 0.07}</p>
+          <p className="m-0 price">${(subtotal * 0.07).toFixed(2)}</p>
         </div>
       </div>
       <div className="lineTotal d-flex justify-content-between align-items-center px-3 border-bottom">
         <p className="m-0 totalTitle">Total</p>
         <p className="m-0 totalPrice">
-          ${subtotal * 1.07 + Number(props.order.shipping_cost)}
+          ${(subtotal * 1.07 + Number(props.order.shipping_cost)).toFixed(2)}
         </p>
       </div>
     </div>

@@ -51,28 +51,19 @@ function CheckoutPayment(props) {
     console.log(paymentMethod);
 
     if (!error) {
-      try {
-        const { id } = paymentMethod;
-        const response = await axios
-          .post("http://localhost:5000/api/orders/payment", {
-            amount: getTotal(props.bag),
-            id,
-          })
-          .then((res) => {
-            history.push("/checkout/confirmation");
-            console.log(res);
-          })
-          .catch((err) => {
-            console.log(err);
-          });
-
-        if (response.data.success) {
-          console.log("successful payment");
-          setSuccess(true);
-        }
-      } catch (err) {
-        console.log(err);
-      }
+      const { id } = paymentMethod;
+      axios
+        .post("https://nanasoapsbackend.herokuapp.com/api/orders/payment", {
+          amount: getTotal(props.bag),
+          id,
+        })
+        .then((res) => {
+          console.log(res);
+          history.push("/checkout/confirmation");
+        })
+        .catch((err) => {
+          console.log(err);
+        });
     } else {
       console.log(error.message);
     }
