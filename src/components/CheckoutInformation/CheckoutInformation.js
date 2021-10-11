@@ -17,6 +17,8 @@ function CheckoutInformation(props) {
     shipping_apartment: "",
     shipping_country: "",
     notes: "",
+    shipping_cost: 0,
+    shipping_id: null,
   };
   const [formData, setFormData] = useState(initialState);
   const history = useHistory();

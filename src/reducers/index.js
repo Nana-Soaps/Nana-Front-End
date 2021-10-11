@@ -11,7 +11,7 @@ const initialState = {
   categories: [],
   products: [],
   bag: [],
-  order: null,
+  order: {},
 };
 
 export const reducer = (state = initialState, action) => {

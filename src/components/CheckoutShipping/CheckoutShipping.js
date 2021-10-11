@@ -13,10 +13,11 @@ function CheckoutShipping(props) {
   const onChange = (e) => {
     const { name, value, checked } = e.target;
     const currentOrder = props.order;
+    const cost = e.target.getAttribute("data-cost");
     if (checked) {
-      props.setOrder({ ...currentOrder, [name]: value });
+      props.setOrder({ ...currentOrder, [name]: value, shipping_cost: cost });
     } else {
-      props.setOrder({ ...currentOrder, [name]: null });
+      props.setOrder({ ...currentOrder, [name]: null, shipping_cost: 0 });
     }
   };
   const handleBack = () => {

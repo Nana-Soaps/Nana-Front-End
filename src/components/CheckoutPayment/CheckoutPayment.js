@@ -19,6 +19,16 @@ function CheckoutPayment(props) {
   const stripe = useStripe();
   const elements = useElements();
 
+  const getTotal = (products) => {
+    let subtotal = 0;
+    products.forEach((product) => {
+      subtotal = subtotal + product.price * product.quantity;
+    });
+
+    const total = (subtotal * 1.07 + Number(props.order.shipping_cost)) * 100;
+    return total;
+  };
+
   const CARD_OPTIONS = {
     iconStyle: "solid",
     style: {
@@ -45,10 +55,11 @@ function CheckoutPayment(props) {
         const { id } = paymentMethod;
         const response = await axios
           .post("http://localhost:5000/api/orders/payment", {
-            amount: 1500, //charge amount in cents
+            amount: getTotal(props.bag),
             id,
           })
           .then((res) => {
+            history.push("/checkout/confirmation");
             console.log(res);
           })
           .catch((err) => {
@@ -78,9 +89,6 @@ function CheckoutPayment(props) {
             <h5 className="text-start">Cart Summary</h5>
             <CartSummary />
             <Contact />
-            {/* <h5 className="text-start">Billing Address</h5>
-            <BillingAddressCheckbox />
-            <BillingAddress /> */}
           </div>
         </form>
         <ElementsConsumer>

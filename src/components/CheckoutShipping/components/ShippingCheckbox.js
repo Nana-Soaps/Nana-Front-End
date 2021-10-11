@@ -17,6 +17,7 @@ function ShippingCheckbox(props) {
           onChange={onChange}
           value={1}
           name="shipping_id"
+          data-cost={7}
         />
       </label>
       <p className="m-0 cost">$7.00</p>
