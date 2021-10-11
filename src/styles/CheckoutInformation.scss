@@ -39,19 +39,35 @@ $dark-grey: #4d4a43;
   .halfInput {
     width: 49%;
   }
+  .redBorder {
+    border: 1px solid red;
+    outline-color: red;
+  }
+  .halfDiv {
+    width: 49%;
+    position: relative;
+  }
+  .fullDiv {
+    width: 100%;
+    position: relative;
+  }
   input,
   select {
     height: 2.25rem;
-    margin-bottom: 0.75rem;
+    margin-bottom: 1.1rem;
   }
   .tripleInput {
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    input,
-    select {
+    .selectWrap {
       width: 32.67%;
+      position: relative;
+      input,
+      select {
+        width: 100%;
+      }
     }
   }
   .btnWrap {
