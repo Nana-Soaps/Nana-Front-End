@@ -6,6 +6,7 @@ import chevronLeftClose from "../../assets/chevron-left-close.svg";
 import { Link, useHistory } from "react-router-dom";
 import axios from "axios";
 import { connect } from "react-redux";
+import { CircularProgress } from "@mui/material";
 import {
   CardElement,
   ElementsConsumer,
@@ -15,6 +16,7 @@ import {
 
 function CheckoutPayment(props) {
   const [success, setSuccess] = useState(false); // if payment is successful we want to show something
+  const [isFetching, setIsFetching] = useState(false);
   const history = useHistory();
   const stripe = useStripe();
   const elements = useElements();
@@ -43,6 +45,7 @@ function CheckoutPayment(props) {
   };
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setIsFetching(true);
     const { error, paymentMethod } = await stripe.createPaymentMethod({
       type: "card",
       card: elements.getElement(CardElement),
@@ -58,13 +61,16 @@ function CheckoutPayment(props) {
           id,
         })
         .then((res) => {
+          setIsFetching(false);
           console.log(res);
           history.push("/checkout/confirmation");
         })
         .catch((err) => {
+          setIsFetching(false);
           console.dir(err);
         });
     } else {
+      setIsFetching(false);
       console.log(error.message);
     }
   };
@@ -82,9 +88,25 @@ function CheckoutPayment(props) {
             <Contact />
           </div>
         </form>
+
         <ElementsConsumer>
           {({ elements, stripe }) => (
-            <form className="payment-form m-auto mt-5" onSubmit={handleSubmit}>
+            <form
+              className="payment-form m-auto mt-5"
+              onSubmit={handleSubmit}
+              style={{ position: "relative" }}
+            >
+              {isFetching && (
+                <CircularProgress
+                  style={{
+                    position: "absolute",
+                    margin: "auto",
+                    top: "-30px",
+                    left: "0px",
+                    right: "0px",
+                  }}
+                />
+              )}
               <h5 className="text-start">Payment</h5>
               <div className="paymentForm border">
                 <CardElement options={CARD_OPTIONS} />
