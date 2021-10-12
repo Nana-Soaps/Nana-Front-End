@@ -4,6 +4,7 @@ import {
   SET_PRODUCTS,
   SET_BAG,
   SET_ORDER,
+  SET_SHIPPING_OPTIONS,
 } from "../actions";
 
 const initialState = {
@@ -12,6 +13,7 @@ const initialState = {
   products: [],
   bag: [],
   order: {},
+  shippingOptions: [],
 };
 
 export const reducer = (state = initialState, action) => {
@@ -44,6 +46,12 @@ export const reducer = (state = initialState, action) => {
       return {
         ...state,
         order: action.payload,
+      };
+    }
+    case SET_SHIPPING_OPTIONS: {
+      return {
+        ...state,
+        shippingOptions: action.payload,
       };
     }
     default:

@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import { useHistory } from "react-router-dom";
 import ShippingCheckbox from "./components/ShippingCheckbox";
 import CartSummary from "./components/CartSummary";
@@ -6,9 +7,20 @@ import Contact from "./components/Contact";
 import "../../styles/CheckoutShipping.scss";
 import chevronLeftClose from "../../assets/chevron-left-close.svg";
 import { connect } from "react-redux";
-import { setOrder } from "../../actions";
+import { setOrder, setShippingOptions } from "../../actions";
 
 function CheckoutShipping(props) {
+  useEffect(() => {
+    axios
+      .get("https://nanasoapsbackend.herokuapp.com/api/orders/shipping-options")
+      .then((res) => {
+        console.log(res);
+        props.setShippingOptions(res.data);
+      })
+      .catch((err) => {
+        console.dir(err);
+      });
+  }, []);
   const history = useHistory();
   const onChange = (e) => {
     const { name, value, checked } = e.target;
@@ -36,7 +48,9 @@ function CheckoutShipping(props) {
           <CartSummary />
           <Contact />
           <h5 className="text-start">Shipping Options</h5>
-          <ShippingCheckbox onChange={onChange} />
+          {props.shippingOptions.map((option) => (
+            <ShippingCheckbox onChange={onChange} option={option} />
+          ))}
 
           <div className="btnWrap">
             <div
@@ -62,4 +76,6 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps, { setOrder })(CheckoutShipping);
+export default connect(mapStateToProps, { setOrder, setShippingOptions })(
+  CheckoutShipping
+);

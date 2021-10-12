@@ -3,6 +3,7 @@ export const SET_CATEGORIES = "SET_CATEGORIES";
 export const SET_PRODUCTS = "SET_PRODUCTS";
 export const SET_BAG = "SET_BAG";
 export const SET_ORDER = "SET_ORDER";
+export const SET_SHIPPING_OPTIONS = "SET_SHIPPING_OPTIONS";
 
 export const toggleCartOpen = (value) => {
   return { type: TOGGLE_CART_OPEN, payload: value };
@@ -22,4 +23,8 @@ export const setBag = (value) => {
 
 export const setOrder = (value) => {
   return { type: SET_ORDER, payload: value };
+};
+
+export const setShippingOptions = (value) => {
+  return { type: SET_SHIPPING_OPTIONS, payload: value };
 };
