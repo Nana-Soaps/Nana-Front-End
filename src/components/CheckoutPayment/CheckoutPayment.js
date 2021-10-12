@@ -90,7 +90,7 @@ function CheckoutPayment(props) {
                 <CardElement options={CARD_OPTIONS} />
               </div>
               <p style={{ color: "red" }} className="mt-2">
-                Use: 4242 4242 4242 4242, 04/24, 424, 24242 for Test Payment
+                Use: 4242 4242 4242 4242, 04/24, 242, 42424 for Test Payment
               </p>
 
               <div className="btnWrap mt-5">
