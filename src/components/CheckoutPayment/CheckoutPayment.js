@@ -28,7 +28,7 @@ function CheckoutPayment(props) {
     });
 
     const total = (subtotal * 1.07 + Number(props.order.shipping_cost)) * 100;
-    return total;
+    return Number(total.toFixed(2));
   };
 
   const CARD_OPTIONS = {

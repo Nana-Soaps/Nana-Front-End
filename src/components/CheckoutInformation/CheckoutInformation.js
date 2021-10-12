@@ -55,11 +55,6 @@ function CheckoutInformation(props) {
   const checkIfValid = async () => {
     const valid = await formSchema.isValid(formData);
     return valid;
-    // formSchema.isValid(formData).then((valid) => {
-    //   console.log(valid);
-    //   return valid;
-    // setIsDisabled(!valid);
-    // });
   };
 
   const setFormErrors = (name, value) => {
