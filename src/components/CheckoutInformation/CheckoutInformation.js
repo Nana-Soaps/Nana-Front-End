@@ -4,6 +4,7 @@ import "../../styles/CheckoutInformation.scss";
 import chevronLeftClose from "../../assets/chevron-left-close.svg";
 import { connect } from "react-redux";
 import { setOrder } from "../../actions";
+import { states } from "./components/states";
 import * as yup from "yup";
 
 function CheckoutInformation(props) {
@@ -48,6 +49,7 @@ function CheckoutInformation(props) {
   const [isDisbaled, setIsDisabled] = useState(true);
   const [errors, setErrors] = useState({});
   const [mainError, setMainError] = useState(false);
+
   const history = useHistory();
 
   const checkIfValid = async () => {
@@ -252,8 +254,9 @@ function CheckoutInformation(props) {
                   className={`${errors.shipping_state ? "redBorder" : ""}`}
                 >
                   <option value="">State</option>
-                  <option value="NJ">New Jersey</option>
-                  <option value="PA">Pennsylvania</option>
+                  {states.map((state) => (
+                    <option value={state}>{state}</option>
+                  ))}
                 </select>
                 <p
                   className="m-0"
