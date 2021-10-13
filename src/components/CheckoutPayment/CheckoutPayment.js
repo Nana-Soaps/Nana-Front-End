@@ -59,6 +59,7 @@ function CheckoutPayment(props) {
         .post("https://nanasoapsbackend.herokuapp.com/api/orders/payment", {
           amount: getTotal(props.bag),
           id,
+          ...props.order,
         })
         .then((res) => {
           setIsFetching(false);
