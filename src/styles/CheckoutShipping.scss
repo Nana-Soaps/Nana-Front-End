@@ -19,7 +19,7 @@ $dark-grey: #4d4a43;
   .checkboxWrap {
     background-color: $white;
     width: 100%;
-    height: 5rem;
+    min-height: 5rem;
   }
   .inputWrap {
     width: 12rem;
@@ -110,11 +110,12 @@ $dark-grey: #4d4a43;
     background-color: $white;
     display: flex;
     width: 100%;
-    height: 4rem;
+    min-height: 4rem;
     padding-left: 1rem;
     padding-right: 1rem;
     justify-content: flex-start;
     align-items: center;
+    // overflow: scroll;
     .title {
       font-weight: 500;
       width: 4rem;
@@ -123,6 +124,25 @@ $dark-grey: #4d4a43;
       text-align: start;
       margin: 0px;
       font-size: 0.9rem;
+    }
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .checkoutShipping {
+    form {
+      width: 100%;
+    }
+    .cartSummary {
+      width: 100%;
+    }
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .checkoutShipping {
+    .contactItem {
+      overflow-x: scroll;
     }
   }
 }
