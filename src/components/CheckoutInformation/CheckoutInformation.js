@@ -226,7 +226,7 @@ function CheckoutInformation(props) {
                   onChange={onChange}
                   className={`${errors.shipping_country ? "redBorder" : ""}`}
                 >
-                  <option value="">Country/Region</option>
+                  <option value="">Country</option>
                   <option value="United States">United States</option>
                 </select>
                 <p

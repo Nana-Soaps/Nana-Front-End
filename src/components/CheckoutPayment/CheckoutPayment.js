@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import CartSummary from "../CheckoutShipping/components/CartSummary";
 import Contact from "../CheckoutShipping/components/Contact";
 import "../../styles/CheckoutPayment.scss";
@@ -16,10 +16,20 @@ import {
 
 function CheckoutPayment(props) {
   const [success, setSuccess] = useState(false); // if payment is successful we want to show something
+  const [postBody, setPostBody] = useState({});
   const [isFetching, setIsFetching] = useState(false);
   const history = useHistory();
   const stripe = useStripe();
   const elements = useElements();
+
+  useEffect(() => {
+    const body = { ...props.order };
+    props.bag.forEach((product) => {
+      body[product.name] = product.quantity;
+    });
+    setPostBody(body);
+    console.log(postBody);
+  }, []);
 
   const getTotal = (products) => {
     let subtotal = 0;
@@ -45,6 +55,8 @@ function CheckoutPayment(props) {
   };
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    console.log(postBody);
     setIsFetching(true);
     const { error, paymentMethod } = await stripe.createPaymentMethod({
       type: "card",
@@ -59,7 +71,7 @@ function CheckoutPayment(props) {
         .post("https://nanasoapsbackend.herokuapp.com/api/orders/payment", {
           amount: getTotal(props.bag),
           id,
-          ...props.order,
+          ...postBody,
         })
         .then((res) => {
           setIsFetching(false);
