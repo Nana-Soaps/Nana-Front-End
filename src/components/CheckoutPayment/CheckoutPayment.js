@@ -130,13 +130,13 @@ function CheckoutPayment(props) {
 
               <div className="btnWrap mt-5">
                 <div
-                  className="d-flex justify-content-center align-items-center backBtn rounded px-2"
+                  className="d-flex justify-content-center align-items-center backBtn rounded px-2 me-2"
                   onClick={handleBack}
                 >
                   <img src={chevronLeftClose} />
                   <p className="m-0 ms-2">Back</p>
                 </div>
-                <button className="continueBtn btn" type="submit">
+                <button className="continueBtn btn ms-2" type="submit">
                   Submit Payment
                 </button>
               </div>

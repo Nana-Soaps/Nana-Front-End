@@ -5,7 +5,7 @@ function Contact(props) {
   console.log(props.order);
   return (
     <div className="mb-5">
-      <div className="contact contactItem border-bottom d-flex">
+      <div className="contact contactItem emailBox border-bottom d-flex">
         <p className="title">Contact: </p>
         <p className="ps-4">{props.order.email}</p>
       </div>

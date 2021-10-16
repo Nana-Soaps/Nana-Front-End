@@ -11,10 +11,10 @@ $mid-grey: #696760;
 $dark-grey: #4d4a43;
 
 .checkoutPayment {
-  form {
-    width: 30rem;
-    margin: auto;
-  }
+  // form {
+  //   width: 30rem;
+  //   margin: auto;
+  // }
   .item {
     background-color: $white;
     padding-left: 1rem;
@@ -75,5 +75,13 @@ $dark-grey: #4d4a43;
   .paymentForm {
     background-color: $white;
     padding: 1rem;
+  }
+}
+
+@media screen and (max-width: 530px) {
+  .checkoutPayment {
+    form {
+      width: 100%;
+    }
   }
 }
