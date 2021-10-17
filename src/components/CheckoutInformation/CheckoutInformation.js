@@ -21,6 +21,8 @@ function CheckoutInformation(props) {
     notes: "",
     shipping_cost: 0,
     shipping_id: null,
+    tax_rate: 0.07,
+    status: "Active",
   };
   const formSchema = yup.object().shape({
     first_name: yup.string().trim().required("Required"),

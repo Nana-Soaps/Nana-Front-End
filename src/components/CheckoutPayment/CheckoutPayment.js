@@ -28,7 +28,6 @@ function CheckoutPayment(props) {
       body[product.name] = product.quantity;
     });
     setPostBody(body);
-    console.log(postBody);
   }, []);
 
   const getTotal = (products) => {
@@ -37,7 +36,10 @@ function CheckoutPayment(props) {
       subtotal = subtotal + product.price * product.quantity;
     });
 
-    const total = (subtotal * 1.07 + Number(props.order.shipping_cost)) * 100;
+    const total =
+      (subtotal * (props.order.tax_rate + 1) +
+        Number(props.order.shipping_cost)) *
+      100;
     return Number(total.toFixed(2));
   };
 
@@ -53,7 +55,33 @@ function CheckoutPayment(props) {
       },
     },
   };
+
+  const postOrderToDb = () => {
+    const bag = props.bag.map((item) => {
+      return {
+        product_id: item.product_id,
+        quantity: item.quantity,
+        soldFor: item.price,
+      };
+    });
+    console.log(bag);
+    const order = props.order;
+    delete order.shipping_cost;
+    console.log(order);
+    axios
+      .post("https://nanasoapsbackend.herokuapp.com/api/orders", { order, bag })
+      .then((res) => {
+        setIsFetching(false);
+        console.log(res);
+        history.push("/checkout/confirmation");
+      })
+      .catch((err) => {
+        console.dir(err);
+      });
+  };
+
   const handleSubmit = async (e) => {
+    console.log(postBody);
     e.preventDefault();
 
     console.log(postBody);
@@ -74,9 +102,10 @@ function CheckoutPayment(props) {
           ...postBody,
         })
         .then((res) => {
-          setIsFetching(false);
-          console.log(res);
-          history.push("/checkout/confirmation");
+          postOrderToDb();
+          // setIsFetching(false);
+          // console.log(res);
+          // history.push("/checkout/confirmation");
         })
         .catch((err) => {
           setIsFetching(false);
@@ -145,6 +174,7 @@ function CheckoutPayment(props) {
         </ElementsConsumer>
         {success && <h1>Payment Successful!</h1>}
       </div>
+      <button onClick={() => console.log(props.order)}>Log order</button>
     </div>
   );
 }
