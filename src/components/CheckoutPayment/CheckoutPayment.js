@@ -174,7 +174,6 @@ function CheckoutPayment(props) {
         </ElementsConsumer>
         {success && <h1>Payment Successful!</h1>}
       </div>
-      <button onClick={() => console.log(props.order)}>Log order</button>
     </div>
   );
 }
