@@ -11,7 +11,17 @@ function Contact(props) {
       </div>
       <div className="contact contactItem border-bottom d-flex">
         <p className="title">Ship To:</p>
-        <p className="ps-4">{`${props.order.shipping_address}, ${props.order.shipping_city}, ${props.order.shipping_state} ${props.order.shipping_zip}, ${props.order.shipping_country}`}</p>
+        <p className="ps-4">{`${props.order.shipping_address}${
+          props.order.shipping_apartment
+            ? " " + props.order.shipping_apartment
+            : ""
+        }, ${props.order.shipping_city}, ${props.order.shipping_state} ${
+          props.order.shipping_zip
+        }, ${props.order.shipping_country}`}</p>
+      </div>
+      <div className="contact contactItem border-bottom d-flex">
+        <p className="title">Notes:</p>
+        <p className="ps-4">{props.order.notes}</p>
       </div>
     </div>
   );
