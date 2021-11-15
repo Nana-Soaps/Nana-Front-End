@@ -12,8 +12,6 @@ $mid-grey: #696760;
 $dark-grey: #323029;
 
 .hero-wrap {
-  // background: linear-gradient(192deg, #ffffff1a 70%, rgba(211, 209, 209, 0.879)),
-  //   url("../assets/HeroImg_3.jpg");
   background: linear-gradient(0.25turn, #6161616e, #7a7a7a71, #6d3a0352),
     url("../assets/HeroImg_3.jpg");
   background-size: cover;
@@ -85,72 +83,161 @@ $dark-grey: #323029;
 .bestsellers {
   font-family: "Raleway", sans-serif;
   background-color: $white;
-  overflow: hidden;
 
   .bestsellers-header {
     font-weight: 300;
     color: $primary;
   }
-  .img-wrap {
-    width: 100%;
-  }
-  .itemCard {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    // align-items: center;
-    // background-color: blue;
+  .bestsellerCard {
     width: 20%;
-    padding: 1.5rem;
-    margin-bottom: 10rem;
-    span {
-      color: black;
+    flex-shrink: 0;
+    .itemWrap {
+      width: 100%;
+      padding: 0.5rem;
+      border-radius: 5px;
+      transition: box-shadow 0.2s;
+    }
+    .imgWrap {
+      background-color: $white;
+      margin-bottom: 0.5rem;
+      aspect-ratio: 1;
+    }
+    img {
+      max-height: 100%;
+    }
+    .textWrap {
+      padding-top: 0.25rem;
+      background-color: #9b7566;
+      font-family: "Josefin Sans", sans-serif;
+      color: $red-1;
+    }
+    h5 {
+      margin: 0px;
+    }
+
+    .name {
+      font-weight: 400;
+      color: $red-1;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+    .price {
+      font-size: 1rem;
+      margin-top: 0.25rem;
+      font-weight: 300;
+      color: $red-1;
+    }
+    .addToBagWrap {
+      background-color: #9b7566;
+      font-family: "Josefin Sans", sans-serif;
+      padding-bottom: 0.25rem;
+      padding-top: 0.5rem;
+      border-radius: 0px 0px 5px 5px;
+      .addText {
+        font-style: italic;
+        font-size: 1rem;
+        color: black;
+      }
+    }
+
+    .itemWrap:hover {
+      box-shadow: 0px 0px 10px rgb(126, 126, 126);
+    }
+    .addToBagWrap:hover {
+      background-color: #8b665a;
+      color: $red-1;
+      cursor: pointer;
+    }
+    .addToBagWrap:active {
+      background-color: #745247;
+      cursor: pointer;
+    }
+    .textWrap:hover,
+    .imgWrap:hover {
+      cursor: pointer;
     }
   }
-  .text-wrap {
-    display: flex;
-    flex-direction: column;
+  .fixed-wrap {
+    overflow: hidden;
   }
   .cards-wrap {
     display: flex;
-    // background-color: red;
-    height: 25.5rem;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
+    transition: transform 0.5s;
   }
-  .addBtn {
-    background-color: $primary;
-    border: none;
+  .arrow-wrap-right {
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: -30px;
+    width: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.2s;
+    border-radius: 0px 10px 10px 0px;
   }
-}
+  .arrow-wrap-left {
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: -30px;
+    width: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.2s;
+    border-radius: 10px 0px 0px 10px;
+  }
+  .arrow-wrap-left:hover,
+  .arrow-wrap-right:hover {
+    background-color: rgb(226, 226, 226);
+    cursor: pointer;
+  }
 
-@media screen and (max-width: 1400px) {
-  .bestsellers {
-    .itemCard {
+  .arrow-wrap-left:active,
+  .arrow-wrap-right:active {
+    background-color: rgb(190, 188, 188);
+    cursor: pointer;
+  }
+  .content-wrap {
+    position: relative;
+    width: 100%;
+  }
+  @media screen and (max-width: 1200px) {
+    .bestsellerCard {
       width: 25%;
     }
   }
-}
 
-@media screen and (max-width: 991px) {
-  .bestsellers {
-    .itemCard {
-      width: 33.333%;
+  @media screen and (max-width: 990px) {
+    .bestsellerCard {
+      width: 33.33%;
     }
   }
-}
 
-@media screen and (max-width: 767px) {
-  .bestsellers {
-    .itemCard {
+  @media screen and (max-width: 767px) {
+    .bestsellerCard {
       width: 50%;
     }
   }
-}
-@media screen and (max-width: 450px) {
-  .bestsellers {
-    .itemCard {
-      width: 50%;
-      padding: 0.5rem;
+
+  @media screen and (max-width: 620px) {
+    .bestsellerCard {
+      .itemWrap {
+        padding: 0rem;
+      }
+    }
+
+    .fixed-wrap {
+      width: 80%;
+    }
+    .arrow-wrap-left {
+      left: 0px;
+    }
+    .arrow-wrap-right {
+      right: 0px;
     }
   }
 }
@@ -164,25 +251,20 @@ $dark-grey: #323029;
     url("../assets/plants-banner.jpg") repeat fixed 100%;
   height: 30rem;
   background-size: cover;
-  // background-position-y: -12rem;
   color: $white;
   display: flex;
   align-items: center;
   .textBox {
-    // background-color: red;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
     font-family: "Raleway", sans-serif;
-    // font-family: "Satisfy", cursive;
     h1 {
       font-weight: 300;
     }
     span {
-      // padding: 0px 10px;
       font-weight: 300;
-      // text-decoration: underline;
     }
   }
 }
