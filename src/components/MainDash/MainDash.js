@@ -14,7 +14,6 @@ function MainDash(props) {
       <MessageBlock />
       <MailingList />
       <Footer />
-      {/* <div style={{ height: "40rem" }}></div> */}
     </div>
   );
 }
