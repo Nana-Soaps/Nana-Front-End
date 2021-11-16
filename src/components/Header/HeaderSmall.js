@@ -21,19 +21,24 @@ function HeaderSmall(props) {
     }
   };
 
+  const clickLogo = () => {
+    if (menuClass === "nav-menu-active") {
+      toggleOpen();
+    }
+  };
+
   const handleOpenCart = () => {
     props.toggleCartOpen(true);
     disableBodyScroll(document);
   };
-  console.log(props);
   return (
     <>
       <div className="header-small py-3">
         <div className="container">
           <div className="expander-wrap" onClick={toggleOpen}>
-            <img src={threeDots} />
+            <img src={threeDots} alt="settings" />
           </div>
-          <div className="logo-container">
+          <div className="logo-container" onClick={clickLogo}>
             <Link to="/" className="text-decoration-none">
               <h1>Nana's Soaps</h1>
             </Link>
@@ -41,11 +46,11 @@ function HeaderSmall(props) {
           <div className="icon-container">
             <Link to="/login">
               <div className="img-container me-2">
-                <img src={user} />
+                <img src={user} alt="login" />
               </div>
             </Link>
             <div className="img-container ms-2" onClick={handleOpenCart}>
-              <img src={shoppingBag} />
+              <img src={shoppingBag} alt="bag" />
             </div>
           </div>
         </div>

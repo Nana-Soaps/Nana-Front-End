@@ -244,6 +244,12 @@ $dark-grey: #323029;
   transition: width 0.3s;
   position: absolute;
   z-index: 1;
+  .chevron {
+    transition: transform 0.1s;
+  }
+  p {
+    margin: 0px;
+  }
   ul {
     list-style-type: none;
     padding: 0px;
@@ -272,7 +278,6 @@ $dark-grey: #323029;
     max-height: 0px;
     overflow: hidden;
     transition: max-height 0.3s;
-    // background-color: $red-1;
     a {
       text-decoration: none;
       color: $mid-grey;
@@ -280,7 +285,6 @@ $dark-grey: #323029;
       padding-bottom: 3px;
       font-size: 1rem;
     }
-    // background-color: red;
   }
   .shopBarOpen {
     max-height: 200px;
