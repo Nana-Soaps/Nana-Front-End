@@ -1,0 +1,258 @@
+.shopHeader {
+  color: #696760;
+}
+
+.shopHeader .content {
+  border-bottom: 1px solid #696760;
+  text-align: left;
+}
+
+.shopHeader .content h1 {
+  font-family: "Inter", sans-serif;
+  font-size: 3.5rem;
+  font-weight: 700;
+}
+
+.shopHeader .content p {
+  font-family: "Lato", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 300;
+}
+
+.sidePanel {
+  border-right: 1px solid #696760;
+  padding-right: 3rem;
+}
+
+.sidePanel .sidePanel-menu {
+  overflow: hidden;
+  max-height: 0px;
+  -webkit-transition: max-height 0.2s;
+  transition: max-height 0.2s;
+  border-left: 1px solid #696760;
+  padding-left: 0.5rem;
+}
+
+.sidePanel .itemTitle:hover {
+  cursor: pointer;
+}
+
+.sidePanel .active {
+  max-height: 10rem;
+}
+
+.sidePanel h5,
+.sidePanel label {
+  color: #4d4a43;
+}
+
+.itemCard {
+  width: 20%;
+}
+
+.itemCard .itemWrap {
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 5px;
+  -webkit-transition: -webkit-box-shadow 0.2s;
+  transition: -webkit-box-shadow 0.2s;
+  transition: box-shadow 0.2s;
+  transition: box-shadow 0.2s, -webkit-box-shadow 0.2s;
+}
+
+.itemCard .imgWrap {
+  background-color: #fcf9f4;
+  margin-bottom: 0.5rem;
+  aspect-ratio: 1;
+}
+
+.itemCard img {
+  max-height: 100%;
+}
+
+.itemCard .textWrap {
+  padding-top: 0.25rem;
+  background-color: #9b7566;
+  font-family: "Josefin Sans", sans-serif;
+  color: #f3e5e4;
+}
+
+.itemCard h5 {
+  margin: 0px;
+}
+
+.itemCard .name {
+  font-weight: 400;
+  color: #f3e5e4;
+}
+
+.itemCard .price {
+  font-size: 1rem;
+  margin-top: 0.25rem;
+  font-weight: 300;
+  color: #f3e5e4;
+}
+
+.itemCard .addToBagWrap {
+  background-color: #9b7566;
+  font-family: "Josefin Sans", sans-serif;
+  padding-bottom: 0.25rem;
+  padding-top: 0.5rem;
+  border-radius: 0px 0px 5px 5px;
+}
+
+.itemCard .addToBagWrap .addText {
+  font-style: italic;
+  font-size: 1rem;
+  color: black;
+}
+
+.itemCard .itemWrap:hover {
+  -webkit-box-shadow: 0px 0px 10px #7e7e7e;
+  box-shadow: 0px 0px 10px #7e7e7e;
+}
+
+.itemCard .addToBagWrap:hover {
+  background-color: #8b665a;
+  color: #f3e5e4;
+  cursor: pointer;
+}
+
+.itemCard .addToBagWrap:active {
+  background-color: #745247;
+  cursor: pointer;
+}
+
+.itemCard .textWrap:hover,
+.itemCard .imgWrap:hover {
+  cursor: pointer;
+}
+
+.itemsWrap {
+  margin-left: 2rem;
+}
+
+@media screen and (max-width: 1400px) {
+  .itemCard {
+    width: 25%;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .itemCard {
+    width: 33.3%;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .itemsWrap {
+    margin-left: 0.5rem;
+  }
+  .itemCard .itemWrap {
+    padding: 0.25rem;
+  }
+  .itemCard .imgWrap {
+    margin-bottom: 0.25rem;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .itemCard {
+    width: 50%;
+  }
+}
+
+.shop .mainContentWrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.shop .sliderBtn {
+  margin-left: 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+  margin-bottom: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border: solid 1px #696760;
+  display: none;
+}
+
+.shop .sliderBtn:hover {
+  background-color: rgba(148, 219, 148, 0.308);
+  cursor: pointer;
+}
+
+.shop .sliderBtn:active {
+  background-color: rgba(148, 219, 148, 0.678);
+}
+
+.shop .shopBtnsContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+}
+
+.shop .sortBtn {
+  margin-right: 1rem;
+  padding-right: 0.5rem;
+  padding-left: 0.5rem;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+}
+
+.shop .sortWrap {
+  -webkit-transform: translateY(-1rem);
+  transform: translateY(-1rem);
+}
+
+@media screen and (max-width: 800px) {
+  .shop .mainContentWrap {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+  .shop .sliderBtn {
+    display: block;
+  }
+  .shop .shopBtnsContainer {
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+  }
+  .sidePanel {
+    padding-left: 1rem;
+    width: 50%;
+    border: 0px;
+    max-height: 0px;
+    overflow: hidden;
+    -webkit-transition: max-height 0.3s;
+    transition: max-height 0.3s;
+  }
+  .shopHeader {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+.filterBarActive {
+  max-height: 600px;
+}
+/*# sourceMappingURL=Shop.css.map */

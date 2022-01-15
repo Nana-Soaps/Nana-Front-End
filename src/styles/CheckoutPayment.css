@@ -1,0 +1,109 @@
+.checkoutPayment .item {
+  background-color: #fcf9f4;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  height: 4rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.checkoutPayment form {
+  margin: auto;
+  width: 30rem;
+}
+
+.checkoutPayment .shippingAddress {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
+}
+
+.checkoutPayment .doubleInput {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.checkoutPayment .fullInput {
+  width: 100%;
+}
+
+.checkoutPayment .halfInput {
+  width: 49%;
+}
+
+.checkoutPayment input,
+.checkoutPayment select {
+  height: 2.25rem;
+  margin-bottom: 0.75rem;
+}
+
+.checkoutPayment .tripleInput {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.checkoutPayment .tripleInput input,
+.checkoutPayment .tripleInput select {
+  width: 32.67%;
+}
+
+.checkoutPayment .btnWrap {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.checkoutPayment .backBtn:hover {
+  background-color: #f4d4d0;
+  cursor: pointer;
+}
+
+.checkoutPayment .continueBtn {
+  background-color: #f4d4d0;
+}
+
+.checkoutPayment .paymentForm {
+  background-color: #fcf9f4;
+  padding: 1rem;
+}
+
+@media screen and (max-width: 530px) {
+  .checkoutPayment form {
+    width: 100%;
+  }
+}
+/*# sourceMappingURL=CheckoutPayment.css.map */

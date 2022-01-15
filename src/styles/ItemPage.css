@@ -1,0 +1,151 @@
+.itemPage h5 {
+  margin: 0px;
+}
+
+.itemPage .imgWrap {
+  width: 49%;
+  aspect-ratio: 1;
+  background-color: #fcf9f4;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.itemPage .imgWrap img {
+  max-height: 100%;
+  max-width: 100%;
+}
+
+.itemPage .textContent {
+  width: 49%;
+  font-family: "Josefin Sans", sans-serif;
+}
+
+.itemPage .smellWrap,
+.itemPage .scrubWrap {
+  width: 2rem;
+  height: 2rem;
+}
+
+.itemPage .smellWrap img,
+.itemPage .scrubWrap img {
+  max-height: 100%;
+  max-width: 100%;
+}
+
+.itemPage .traitsWrap h5 {
+  font-size: 1rem;
+}
+
+.itemPage .traitsWrap .top {
+  font-weight: 600;
+}
+
+.itemPage .traitsWrap .bottom {
+  font-weight: 300;
+}
+
+.itemPage .quantityWrap .label {
+  font-size: 1rem;
+}
+
+.itemPage .quantityWrap .option {
+  font-size: 0.9rem;
+  margin-right: 1rem;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.itemPage .quantityWrap .option:hover {
+  background-color: #f4d4d0;
+  cursor: pointer;
+}
+
+.itemPage .addCartBtn {
+  background-color: #9b7566;
+  color: #fcf9f4;
+}
+
+.itemPage .ingredientsLabel {
+  font-weight: 400;
+}
+
+.itemPage .price {
+  color: #2bbe2b;
+}
+
+.itemPage .contentWrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
+}
+
+.itemPage .smellsLikeWrap,
+.itemPage .exfoliationWrap {
+  padding-right: 3rem;
+}
+
+.itemPage .label {
+  text-align: start;
+}
+
+@media screen and (max-width: 770px) {
+  .itemPage .textContent {
+    width: 100%;
+    padding-top: 2rem;
+  }
+  .itemPage .imgWrap {
+    width: 100%;
+  }
+  .itemPage .contentWrap {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .itemPage h1 {
+    margin: auto;
+    margin-bottom: 1rem;
+  }
+  .itemPage .smellsLikeWrap,
+  .itemPage .exfoliationWrap {
+    padding-right: 1.25rem;
+  }
+  .itemPage .traitsWrap {
+    margin: auto;
+  }
+  .itemPage .price {
+    margin: auto;
+  }
+  .itemPage .quantityWrap {
+    margin: auto;
+  }
+  .itemPage .quantityWrap h5 {
+    text-align: center;
+  }
+  .itemPage button {
+    margin: auto;
+  }
+}
+/*# sourceMappingURL=ItemPage.css.map */

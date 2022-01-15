@@ -1,0 +1,124 @@
+.checkoutInformation form {
+  margin: auto;
+  width: 30rem;
+}
+
+.checkoutInformation .contact {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
+}
+
+.checkoutInformation .shippingAddress {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
+}
+
+.checkoutInformation .doubleInput {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.checkoutInformation .fullInput {
+  width: 100%;
+}
+
+.checkoutInformation .halfInput {
+  width: 49%;
+}
+
+.checkoutInformation .redBorder {
+  border: 1px solid red;
+  outline-color: red;
+}
+
+.checkoutInformation .halfDiv {
+  width: 49%;
+  position: relative;
+}
+
+.checkoutInformation .fullDiv {
+  width: 100%;
+  position: relative;
+}
+
+.checkoutInformation input,
+.checkoutInformation select {
+  height: 2.25rem;
+  margin-bottom: 1.1rem;
+}
+
+.checkoutInformation .tripleInput {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.checkoutInformation .tripleInput .selectWrap {
+  width: 32.67%;
+  position: relative;
+}
+
+.checkoutInformation .tripleInput .selectWrap input,
+.checkoutInformation .tripleInput .selectWrap select {
+  width: 100%;
+}
+
+.checkoutInformation .btnWrap {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.checkoutInformation .backBtn:hover {
+  background-color: #f4d4d0;
+  cursor: pointer;
+}
+
+.checkoutInformation .continueBtn {
+  background-color: #f4d4d0;
+}
+
+@media screen and (max-width: 550px) {
+  .checkoutInformation form {
+    width: 100%;
+  }
+}
+/*# sourceMappingURL=CheckoutInformation.css.map */

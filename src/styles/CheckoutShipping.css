@@ -1,0 +1,173 @@
+.checkoutShipping form {
+  margin: auto;
+  width: 30rem;
+}
+
+.checkoutShipping .checkboxWrap {
+  background-color: #fcf9f4;
+  width: 100%;
+  min-height: 5rem;
+}
+
+.checkoutShipping .inputWrap {
+  width: 12rem;
+}
+
+.checkoutShipping .shippingName {
+  font-weight: 500;
+  font-size: 1.2rem;
+}
+
+.checkoutShipping .shippingDescription {
+  font-size: 0.9rem;
+}
+
+.checkoutShipping .cost {
+  font-weight: 500;
+  font-size: 1.2rem;
+}
+
+.checkoutShipping .btnWrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.checkoutShipping .backBtn:hover {
+  background-color: #f4d4d0;
+  cursor: pointer;
+}
+
+.checkoutShipping .continueBtn {
+  background-color: #f4d4d0;
+}
+
+.checkoutShipping .imgWrap {
+  width: 4rem;
+  height: 4rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.checkoutShipping img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.checkoutShipping .left {
+  width: 24rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.checkoutShipping .prodName {
+  font-weight: 500;
+  font-size: 1.1rem;
+}
+
+.checkoutShipping .prodQuantity {
+  font-size: 0.9rem;
+}
+
+.checkoutShipping .cartSummary {
+  background-color: #fcf9f4;
+  width: 30rem;
+  margin: auto;
+}
+
+.checkoutShipping .cartSummaryItem {
+  width: 100%;
+  height: 4rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.checkoutShipping .lineItem {
+  height: 2rem;
+}
+
+.checkoutShipping .price {
+  font-weight: 500;
+}
+
+.checkoutShipping .lineTotal {
+  height: 5rem;
+}
+
+.checkoutShipping .totalTitle {
+  font-weight: 500;
+  font-size: 1.25rem;
+}
+
+.checkoutShipping .totalPrice {
+  font-weight: 500;
+  font-size: 1.25rem;
+}
+
+.checkoutShipping .contactItem {
+  background-color: #fcf9f4;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  min-height: 4rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.checkoutShipping .contactItem .title {
+  font-weight: 500;
+  width: 4rem;
+}
+
+.checkoutShipping .contactItem p {
+  text-align: start;
+  margin: 0px;
+  font-size: 0.9rem;
+}
+
+@media screen and (max-width: 550px) {
+  .checkoutShipping form {
+    width: 100%;
+  }
+  .checkoutShipping .cartSummary {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .checkoutShipping .emailBox {
+    overflow-x: scroll;
+  }
+}
+/*# sourceMappingURL=CheckoutShipping.css.map */

@@ -1,0 +1,432 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+.App {
+  text-align: center;
+}
+
+Link {
+  text-decoration: none;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    -webkit-animation: App-logo-spin infinite 20s linear;
+            animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@-webkit-keyframes App-logo-spin {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes App-logo-spin {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+.header {
+  font-family: "Raleway", sans-serif;
+  background-color: #c07572a6;
+}
+
+.header .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.header .container a {
+  text-decoration: none;
+}
+
+.header h1 {
+  font-size: 30px;
+  font-weight: 300;
+  color: #fcf9f4;
+  margin: 0px;
+}
+
+.header h1:hover {
+  cursor: pointer;
+}
+
+.header ul {
+  list-style-type: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0px;
+  padding: 0px;
+  width: 33.3333%;
+}
+
+.header .text {
+  color: #fcf9f4;
+  text-decoration: none;
+  font-weight: 400;
+}
+
+.header .text:hover {
+  border-bottom: solid white 1px;
+  cursor: pointer;
+}
+
+.header .img-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.header .img-container:hover {
+  cursor: pointer;
+}
+
+.header .icon-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 33.3333%;
+}
+
+.header .logo-container {
+  width: 33.3333%;
+  padding: 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.header .shopBar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  list-style-type: none;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 30rem;
+  margin: auto;
+  overflow: hidden;
+}
+
+.header .shopBar a {
+  color: #323029;
+}
+
+.header .shopBar li:hover {
+  text-decoration: underline;
+}
+
+.header .shopBar li {
+  font-size: 1rem;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.shopBarClosed {
+  max-height: 0px;
+  overflow: hidden;
+  -webkit-transition: max-height 0.1s;
+  transition: max-height 0.1s;
+}
+
+.shopBarOpen {
+  max-height: 45px;
+  -webkit-transition: max-height 0.1s;
+  transition: max-height 0.1s;
+}
+
+.shopBarWrap {
+  background-color: #f4d4d0;
+}
+
+.header-small {
+  font-family: "Raleway", sans-serif;
+  background-color: #c07572a6;
+  display: none;
+}
+
+.header-small .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.header-small h1 {
+  font-size: 30px;
+  font-weight: 300;
+  color: #fcf9f4;
+  margin: 0px;
+  text-decoration: none;
+}
+
+.header-small h1:hover {
+  cursor: pointer;
+}
+
+.header-small ul {
+  list-style-type: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0px;
+  padding: 0px;
+  width: 33.3333%;
+}
+
+.header-small .text {
+  color: #fcf9f4;
+  text-decoration: none;
+  font-weight: 400;
+}
+
+.header-small .text:hover {
+  border-bottom: solid white 1px;
+  cursor: pointer;
+}
+
+.header-small .img-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.header-small .icon-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 19%;
+}
+
+.header-small .logo-container {
+  width: 62%;
+  padding: 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.header-small .expander-wrap {
+  width: 19%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.header-small .expander-wrap:hover {
+  cursor: pointer;
+}
+
+.header-small .img-container:hover {
+  cursor: pointer;
+}
+
+.nav-menu {
+  background-color: #fcf9f4;
+  color: #696760;
+  padding: 10px 0px;
+  width: 0%;
+  height: 100vh;
+  overflow: hidden;
+  -webkit-transition: width 0.3s;
+  transition: width 0.3s;
+  position: absolute;
+  z-index: 1;
+}
+
+.nav-menu .chevron {
+  -webkit-transition: -webkit-transform 0.1s;
+  transition: -webkit-transform 0.1s;
+  transition: transform 0.1s;
+  transition: transform 0.1s, -webkit-transform 0.1s;
+}
+
+.nav-menu p {
+  margin: 0px;
+}
+
+.nav-menu ul {
+  list-style-type: none;
+  padding: 0px;
+  margin: 0px;
+}
+
+.nav-menu li {
+  border-bottom: solid #696760 1px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 10px 0px;
+  opacity: 0;
+  -webkit-transition: opacity 0.3s;
+  transition: opacity 0.3s;
+}
+
+.nav-menu li:hover {
+  cursor: pointer;
+}
+
+.nav-menu .first-item {
+  border-top: solid 1px #696760;
+}
+
+.nav-menu .expandableShopBar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: centers;
+      -ms-flex-align: centers;
+          align-items: centers;
+  max-height: 0px;
+  overflow: hidden;
+  -webkit-transition: max-height 0.3s;
+  transition: max-height 0.3s;
+}
+
+.nav-menu .expandableShopBar a {
+  text-decoration: none;
+  color: #696760;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  font-size: 1rem;
+}
+
+.nav-menu .shopBarOpen {
+  max-height: 200px;
+}
+
+.nav-menu-active {
+  width: 100%;
+}
+
+.nav-menu-active li {
+  opacity: 1;
+}
+
+@media screen and (max-width: 768px) {
+  .header {
+    display: none;
+  }
+  .header-small {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .header-small h1 {
+    font-size: 1.3rem;
+  }
+}
+/*# sourceMappingURL=Header.css.map */
