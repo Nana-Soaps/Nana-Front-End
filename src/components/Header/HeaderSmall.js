@@ -44,11 +44,11 @@ function HeaderSmall(props) {
             </Link>
           </div>
           <div className="icon-container">
-            <Link to="/login">
+            {/* <Link to="/login">
               <div className="img-container me-2">
                 <img src={user} alt="login" />
               </div>
-            </Link>
+            </Link> */}
             <div className="img-container ms-2" onClick={handleOpenCart}>
               <img src={shoppingBag} alt="bag" />
             </div>

@@ -5,9 +5,7 @@ import { useLocation } from "react-router-dom";
 import { connect } from "react-redux";
 import { setBag, toggleCartOpen } from "../../actions";
 import { disableBodyScroll } from "body-scroll-lock";
-
 import "../../styles/ItemPage.scss";
-import soapImg from "../../assets/soap-item.png";
 
 function ItemPage(props) {
   const location = useLocation();
@@ -43,7 +41,6 @@ function ItemPage(props) {
       props.setBag([...props.bag, { ...product, quantity: quantity }]);
     }
     props.toggleCartOpen(true);
-    disableBodyScroll(true);
   };
   return (
     <div className="py-5 itemPage">

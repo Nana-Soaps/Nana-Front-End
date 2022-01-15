@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
-import { Link, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import "../../styles/Cart.scss";
 import { connect } from "react-redux";
 import { toggleCartOpen } from "../../actions";

@@ -33,7 +33,6 @@ function ProductCard(props) {
       props.setBag([...props.bag, { ...product, quantity: 1 }]);
     }
     props.toggleCartOpen(true);
-    disableBodyScroll(true);
   };
   return (
     <div className="itemCard p-1">

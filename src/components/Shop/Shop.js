@@ -38,7 +38,6 @@ function Shop(props) {
       <div className="container mainContentWrap">
         <SidePanel filterBarActive={filterBarActive} />
         <Products category={category} />
-        {/* <div style={{ width: "100rem", height: "100vh" }}></div> */}
       </div>
     </div>
   );

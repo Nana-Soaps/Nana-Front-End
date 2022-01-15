@@ -23,7 +23,6 @@ import { stripePromise } from "./lib/stripe";
 
 function App(props) {
   const [stripe, setStripe] = useState();
-
   stripePromise.then((res) => {
     setStripe(res);
     console.log(stripe);

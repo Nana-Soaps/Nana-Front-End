@@ -33,7 +33,6 @@ function BestsellerCard(props) {
       props.setBag([...props.bag, { ...product, quantity: 1 }]);
     }
     props.toggleCartOpen(true);
-    disableBodyScroll(true);
   };
   return (
     <div className="bestsellerCard p-1">
@@ -63,7 +62,7 @@ function BestsellerCard(props) {
             onClick={handleAddToBag}
           >
             <h5 className="me-2 addText">Add To Bag</h5>
-            <img src={bagAdd} />
+            <img src={bagAdd} alt="add to bag logo" />
           </div>
         </div>
       </div>
