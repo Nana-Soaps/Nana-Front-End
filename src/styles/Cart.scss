@@ -14,7 +14,7 @@ $dark-grey: #4d4a43;
 .cartPageWrap {
   width: 100%;
   height: 254vh;
-  position: absolute;
+  position: fixed;
   top: 0;
   background-color: rgba(0, 0, 0, 0.473);
   font-family: "Josefin Sans", sans-serif;
@@ -40,7 +40,7 @@ $dark-grey: #4d4a43;
   .cartWrap {
     width: 0rem;
     height: 254vh;
-    position: absolute;
+    position: fixed;
     background-color: $white;
     right: 0;
     top: 0;
