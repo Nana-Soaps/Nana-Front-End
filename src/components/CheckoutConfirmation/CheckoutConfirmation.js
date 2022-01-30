@@ -1,15 +1,22 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
 import axios from "axios";
-import PropTypes from "prop-types";
+import OrderDetails from "./OrderDetails.js";
+import "../../styles/CheckoutConfirmation.scss";
 
 CheckoutConfirmation.propTypes = {};
 
 function CheckoutConfirmation(props) {
+  const [order, setOrder] = useState(null);
+  const location = useLocation();
+  const orderId = location.state.orderId;
+
+  // get the order info based on order ID
   useEffect(() => {
     axios
-      .post("https://nanasoapsbackend.herokuapp.com/api/emails")
+      .get(`https://nanasoapsbackend.herokuapp.com/api/orders/${orderId}`)
       .then((res) => {
-        console.log(res);
+        setOrder(res.data);
       })
       .catch((err) => {
         console.dir(err);
@@ -18,10 +25,13 @@ function CheckoutConfirmation(props) {
   return (
     <div className="checkoutConfirmation py-5">
       <div className="container">
-        <h3 className="mb-4">Congratulations!</h3>
-        <h3>
-          Your payment has been submitted, and your order has been confirmed.
-        </h3>
+        <div className="checkout-head">
+          <h3 className="mb-4">Congratulations!</h3>
+          <h3>
+            Your payment has been submitted, and your order has been confirmed.
+          </h3>
+        </div>
+        {order && <OrderDetails order={order} />}
       </div>
     </div>
   );

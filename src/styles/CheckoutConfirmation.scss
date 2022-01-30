@@ -1,0 +1,295 @@
+$primary: #f7fafd;
+$secondary: #f1f6fb;
+$dark-1: #283341;
+$dark-2: #516279;
+$white: #ffffff;
+$green: #5dd5bd;
+$subtle-accents: #d6e4f7;
+$money-green: #48ad96;
+
+.checkoutConfirmation {
+  .checkout-head {
+    h3 {
+      font-size: 1.25rem;
+      margin-bottom: 2rem;
+    }
+  }
+  .orderDetails {
+    display: flex;
+    justify-content: center;
+  }
+  .orderInfo {
+    width: 100%;
+  }
+
+  @media screen and (max-width: 770px) {
+    .orderDetails {
+      display: block;
+    }
+  }
+  background-color: $primary;
+  img {
+    max-width: 100%;
+    max-height: 100%;
+  }
+  h1 {
+    font-size: 2rem;
+    color: $dark-1;
+  }
+
+  button {
+    font-size: 0.9rem;
+    border: 0px;
+    background-color: $dark-1;
+    color: $white;
+    padding: 5px 30px;
+    border-radius: 15px;
+  }
+
+  .top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  input {
+    width: 100%;
+    padding: 10px 30px;
+    margin-top: 20px;
+    outline: 2px solid transparent;
+    border: 0px;
+    border-radius: 20px;
+    box-shadow: 1px 1px 5px $dark-2;
+  }
+  .categoriesTitle {
+    border-radius: 10px 10px 0px 0px;
+    background-color: $secondary;
+  }
+  .ordersList {
+    width: 100%;
+    margin-top: 2rem;
+    border-radius: 10px;
+    box-shadow: 3px 2px 15px $dark-2;
+    h5 {
+      margin: 0px;
+      font-size: 1rem;
+      color: $dark-1;
+    }
+    .orderHead {
+      width: 30%;
+    }
+    .dateHead {
+      width: 25%;
+    }
+    .statusHead {
+      width: 25%;
+    }
+    .amountHead {
+      width: 20%;
+    }
+    .header {
+      width: 100%;
+      height: 3rem;
+      background-color: $secondary;
+      display: flex;
+      align-items: center;
+      padding: 0px 10px;
+      border-radius: 10px 10px 0px 0px;
+    }
+
+    .orderItem:hover {
+      background-color: $subtle-accents;
+      cursor: pointer;
+    }
+    .orderBody {
+      width: 100%;
+      border-bottom: 1px solid $subtle-accents;
+      transition: max-height 0.4s;
+      max-height: 0px;
+      overflow: hidden;
+    }
+    p {
+      font-size: 0.8rem;
+    }
+    h5 {
+      margin: 0px;
+    }
+    img {
+      max-width: 100%;
+      max-height: 100%;
+    }
+    .imgWrap {
+      width: 4rem;
+      height: 4rem;
+      margin-right: 1rem;
+    }
+    .col1 {
+      width: 30%;
+      display: flex;
+      align-items: center;
+    }
+    .col2 {
+      width: 25%;
+    }
+    select {
+      padding: 0px;
+      margin: 0px;
+      font-size: 0.8rem;
+    }
+    img {
+      max-width: 100%;
+      max-height: 100%;
+    }
+    .checkmarkWrap {
+      background-color: $subtle-accents;
+      width: 20px;
+      height: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      margin-left: 5px;
+    }
+    .checkmarkWrap:hover {
+      background-color: $dark-2;
+      cursor: pointer;
+    }
+    .orderTop {
+      display: flex;
+      align-items: center;
+      padding: 10px 10px;
+
+      .col3 {
+        width: 25%;
+      }
+      .col4 {
+        width: 20%;
+      }
+    }
+
+    .footer {
+      border-radius: 0px 0px 10px 10px;
+      width: 100%;
+      height: 1rem;
+      background-color: $secondary;
+      display: flex;
+      align-items: center;
+      padding: 0px 10px;
+    }
+  }
+  .right {
+    width: 40%;
+  }
+  .mid {
+    width: 60%;
+    margin-left: 1rem;
+    text-overflow: clip;
+  }
+  img {
+    max-width: 100%;
+    max-height: 100%;
+  }
+  .imgWrap {
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  h2 {
+    font-size: 1.1rem;
+    margin: 0px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    font-weight: 300;
+  }
+  h3 {
+    font-size: 0.8rem;
+    margin: 0px;
+    margin-top: 0.3rem;
+    font-weight: 300;
+  }
+  .cartItem {
+    display: flex;
+    align-items: center;
+    background-color: $white;
+
+    padding: 0.5rem;
+  }
+  .cartSummary {
+    margin: auto;
+    max-width: 25rem;
+    width: 50%;
+    padding-left: 1rem;
+  }
+  h3,
+  p {
+    font-size: 0.9rem;
+    margin: 0px;
+    font-weight: 400;
+  }
+  .price {
+    font-weight: 300;
+  }
+  .breakdown {
+    div {
+      padding: 0.3rem 0.5rem;
+    }
+  }
+  .total {
+    h3 {
+      font-size: 1.2rem;
+    }
+    padding: 1rem 0.5rem;
+  }
+  .costSummary {
+    background-color: $white;
+  }
+  p {
+    margin: 0px;
+    font-weight: 300;
+    font-size: 0.9rem;
+  }
+  .contactItem {
+    padding: 1rem 0.5rem;
+  }
+  .title {
+    font-weight: 400;
+    font-size: 0.9rem;
+  }
+  .titleWrap {
+    width: 5rem;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+  }
+  .contactSummary {
+    background-color: $white;
+  }
+  .orderInfo {
+    max-width: 25rem;
+    padding: 0rem 1rem;
+    margin: auto;
+    p {
+      margin: 0px;
+      font-weight: 300;
+      font-size: 0.9rem;
+      text-align: right;
+    }
+    .title {
+      font-weight: 400;
+      width: 5rem;
+      text-align: start;
+    }
+    .item {
+      background-color: white;
+      padding: 0.5rem 0.25rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .block {
+      margin-bottom: 1rem;
+    }
+  }
+}

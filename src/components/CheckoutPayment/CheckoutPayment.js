@@ -72,8 +72,7 @@ function CheckoutPayment(props) {
       .post("https://nanasoapsbackend.herokuapp.com/api/orders", { order, bag })
       .then((res) => {
         setIsFetching(false);
-        console.log(res);
-        history.push("/checkout/confirmation");
+        history.push("/checkout/confirmation", { orderId: res.data });
       })
       .catch((err) => {
         console.dir(err);
