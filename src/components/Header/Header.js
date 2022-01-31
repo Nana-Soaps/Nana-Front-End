@@ -33,7 +33,7 @@ function Header(props) {
       <div className="header py-3">
         <div className="container">
           <div className="logo-container">
-            <Link to="/">
+            <Link to="/" onClick={() => setShopBarOpen(false)}>
               <h1>Nana's Soaps</h1>
             </Link>
           </div>
