@@ -29,13 +29,15 @@ function Header(props) {
           </div>
           <ul>
             <li className="me-2" onClick={clickShop}>
-              <a className="text">Shop</a>
+              <p className="text">Shop</p>
             </li>
-            <li className="mx-2">
-              <a className="text">Our Story</a>
-            </li>
+            <Link to="/our-story">
+              <li className="mx-2">
+                <p className="text">Our Story</p>
+              </li>
+            </Link>
             <li className="ms-2">
-              <a className="text">Contact Us</a>
+              <p className="text">Contact Us</p>
             </li>
           </ul>
           <div className="icon-container">

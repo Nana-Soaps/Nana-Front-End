@@ -10,3 +10,4 @@ export { default as CheckoutInformation } from "./CheckoutInformation/CheckoutIn
 export { default as CheckoutShipping } from "./CheckoutShipping/CheckoutShipping";
 export { default as CheckoutPayment } from "./CheckoutPayment/CheckoutPayment";
 export { default as CheckoutConfirmation } from "./CheckoutConfirmation/CheckoutConfirmation";
+export { default as OurStory } from "./OurStory/OurStory";

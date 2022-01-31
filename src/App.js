@@ -12,6 +12,7 @@ import {
   CheckoutShipping,
   CheckoutPayment,
   CheckoutConfirmation,
+  OurStory,
 } from "./components";
 import "./styles/Header.scss";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -88,6 +89,9 @@ function App(props) {
         </Route>
         <Route exact path="/checkout/confirmation">
           <CheckoutConfirmation />
+        </Route>
+        <Route exact path="/our-story">
+          <OurStory />
         </Route>
       </Switch>
       {props.cartOpen && <Cart />}

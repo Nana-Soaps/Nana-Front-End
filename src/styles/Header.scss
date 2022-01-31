@@ -68,6 +68,9 @@ $dark-grey: #323029;
 .header {
   font-family: "Raleway", sans-serif;
   background-color: $primary;
+  p {
+    margin: 0px;
+  }
   .container {
     display: flex;
     justify-content: flex-start;
