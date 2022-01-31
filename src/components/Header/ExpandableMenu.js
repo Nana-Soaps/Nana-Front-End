@@ -1,9 +1,11 @@
 import React, { useState, useRef } from "react";
 import ExpandableShopBar from "./ExpandableShopBar";
 import chevronRight from "../../assets/chevron-right.svg";
-import chevronDown from "../../assets/chevron-down.svg";
+// import chevronDown from "../../assets/chevron-down.svg";
+import { useHistory } from "react-router-dom";
 
 function ExpandableMenu(props) {
+  const history = useHistory();
   const shopChevron = useRef(null);
   const { toggleOpen } = props;
   const [shopBarOpen, setShopBarOpen] = useState(false);
@@ -13,6 +15,16 @@ function ExpandableMenu(props) {
     }`;
     setShopBarOpen(() => !shopBarOpen);
   };
+
+  const handleOurStory = () => {
+    history.push("/our-story");
+    toggleOpen();
+  };
+  const handleContactUs = () => {
+    history.push("/contact");
+    toggleOpen();
+  };
+
   return (
     <div className={`nav-menu ${props.menuClass}`}>
       <div className="container">
@@ -32,13 +44,13 @@ function ExpandableMenu(props) {
               toggleOpen={toggleOpen}
             />
           </li>
-          <li>
+          <li onClick={handleOurStory}>
             <p>Our Story</p>
-            <img src={chevronRight} />
+            <img src={chevronRight} alt="chevron right" />
           </li>
-          <li>
+          <li onClick={handleContactUs}>
             <p>Contact Us</p>
-            <img src={chevronRight} />
+            <img src={chevronRight} alt="chevron left" />
           </li>
         </ul>
       </div>

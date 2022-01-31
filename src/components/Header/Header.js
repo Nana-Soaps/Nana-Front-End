@@ -3,20 +3,30 @@ import HeaderSmall from "./HeaderSmall";
 import ShopBar from "./ShopBar";
 import shoppingBag from "../../assets/bag.svg";
 import user from "../../assets/user.svg";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { connect } from "react-redux";
 import { toggleCartOpen } from "../../actions";
 import { disableBodyScroll } from "body-scroll-lock";
 
 function Header(props) {
   const [shopBarOpen, setShopBarOpen] = useState(false);
+  const history = useHistory();
   const clickShop = () => {
     setShopBarOpen(() => !shopBarOpen);
   };
 
   const handleOpenCart = () => {
     props.toggleCartOpen(true);
-    disableBodyScroll(document);
+  };
+
+  const handleOurStory = () => {
+    history.push("/our-story");
+    setShopBarOpen(false);
+  };
+
+  const handleContactUs = () => {
+    history.push("/contact");
+    setShopBarOpen(false);
   };
   return (
     <>
@@ -31,12 +41,10 @@ function Header(props) {
             <li className="me-2" onClick={clickShop}>
               <p className="text">Shop</p>
             </li>
-            <Link to="/our-story">
-              <li className="mx-2">
-                <p className="text">Our Story</p>
-              </li>
-            </Link>
-            <li className="ms-2">
+            <li className="mx-2" onClick={handleOurStory}>
+              <p className="text">Our Story</p>
+            </li>
+            <li className="ms-2" onClick={handleContactUs}>
               <p className="text">Contact Us</p>
             </li>
           </ul>

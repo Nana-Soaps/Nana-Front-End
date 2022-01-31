@@ -29,7 +29,6 @@ function HeaderSmall(props) {
 
   const handleOpenCart = () => {
     props.toggleCartOpen(true);
-    disableBodyScroll(document);
   };
   return (
     <>

@@ -28,6 +28,7 @@ $dark-grey: #4d4a43;
   .upper {
     display: flex;
     justify-content: center;
+    padding: 0rem 1.75rem;
     p {
       text-align: left;
       font-family: "Raleway", sans-serif;
@@ -45,7 +46,7 @@ $dark-grey: #4d4a43;
   @media screen and (max-width: 770px) {
     .upper {
       p {
-        font-size: 1.25rem;
+        font-size: 1.1rem;
         text-align: center;
       }
       display: block;
