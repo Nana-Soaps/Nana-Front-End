@@ -1,10 +1,8 @@
 import React from "react";
-import soapImg from "../../../assets/soap-item.png";
 import bagAdd from "../../../assets/bag-add.svg";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { setBag, toggleCartOpen } from "../../../actions";
-import { disableBodyScroll } from "body-scroll-lock";
 
 function ProductCard(props) {
   const { product } = props;

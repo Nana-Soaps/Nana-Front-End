@@ -14,7 +14,6 @@ $dark-grey: #4d4a43;
 .contactUsForm {
   margin: auto;
   width: 30rem;
-  //   background-color: red;
 
   label {
     display: flex;
@@ -35,5 +34,11 @@ $dark-grey: #4d4a43;
   button {
     margin-top: 1rem;
     background-color: $red-3;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .contactUsForm {
+    width: 100%;
   }
 }

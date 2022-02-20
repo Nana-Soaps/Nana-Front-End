@@ -58,6 +58,7 @@ $dark-grey: #4d4a43;
     width: 100%;
     padding: 0.5rem;
     border-radius: 5px;
+    // height: 5rem;
     transition: box-shadow 0.2s;
   }
   .imgWrap {
@@ -80,6 +81,9 @@ $dark-grey: #4d4a43;
   .name {
     font-weight: 400;
     color: $red-1;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
   }
   .price {
     font-size: 1rem;

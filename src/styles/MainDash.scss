@@ -318,11 +318,15 @@ $dark-grey: #323029;
   p {
     margin: 0px;
   }
+  Link {
+    text-decoration: none;
+  }
   .footerTabs {
     display: flex;
-    width: 20rem;
+    width: 7rem;
     justify-content: space-between;
     margin: auto;
+
     h5 {
       font-size: 1em;
       color: $red-1;

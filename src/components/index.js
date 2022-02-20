@@ -12,3 +12,4 @@ export { default as CheckoutPayment } from "./CheckoutPayment/CheckoutPayment";
 export { default as CheckoutConfirmation } from "./CheckoutConfirmation/CheckoutConfirmation";
 export { default as OurStory } from "./OurStory/OurStory";
 export { default as ContactUs } from "./ContactUs/ContactUs";
+export { default as FAQ } from "./FAQ/FAQ";

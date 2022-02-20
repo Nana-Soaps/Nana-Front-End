@@ -14,6 +14,7 @@ import {
   CheckoutConfirmation,
   OurStory,
   ContactUs,
+  FAQ,
 } from "./components";
 import "./styles/Header.scss";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -96,6 +97,9 @@ function App(props) {
         </Route>
         <Route exact path="/contact">
           <ContactUs />
+        </Route>
+        <Route exact path="/faq">
+          <FAQ />
         </Route>
       </Switch>
       {props.cartOpen && <Cart />}
