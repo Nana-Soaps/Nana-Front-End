@@ -1,20 +1,27 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import ShopHeader from "./components/ShopHeader";
 import SidePanel from "./components/SidePanel";
 import Products from "./components/Products";
 import sliders from "../../assets/sliders.svg";
+// import { useFilteredProducts } from "../../customHooks";
 import "../../styles/Shop.scss";
 
 function Shop(props) {
   const location = useLocation();
   const { category } = location.state;
   const [filterBarActive, setFilterBarActive] = useState(false);
+
   console.log(category);
 
   const handleFilterBtn = () => {
     setFilterBarActive(() => !filterBarActive);
   };
+
+  useEffect(() => {
+    const sorted = category.products.sort((a, b) => a.price - b.price);
+    console.log(sorted);
+  });
 
   console.log(category);
   return (
@@ -37,7 +44,7 @@ function Shop(props) {
       </div>
       <div className="container mainContentWrap">
         <SidePanel filterBarActive={filterBarActive} />
-        <Products category={category} />
+        <Products products={category.products} />
       </div>
     </div>
   );
