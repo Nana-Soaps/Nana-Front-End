@@ -14,13 +14,11 @@ function ShopBar(props) {
         >
           <li className="me-2" onClick={clickShop}>
             <Link
-              to={{
-                pathname: "/shop",
-                state: {
-                  category: {
-                    category_name: "Full Catalog",
-                    products: props.products,
-                  },
+              to="/shop"
+              state={{
+                category: {
+                  category_name: "Full Catalog",
+                  products: props.products,
                 },
               }}
               className="text-decoration-none"
@@ -32,7 +30,8 @@ function ShopBar(props) {
             return (
               <li className="me-2" onClick={clickShop}>
                 <Link
-                  to={{ pathname: "/shop", state: { category: category } }}
+                  to="/shop"
+                  state={{ category: category }}
                   className="text-decoration-none"
                 >
                   <p className="text-dark">{category.category_name}</p>

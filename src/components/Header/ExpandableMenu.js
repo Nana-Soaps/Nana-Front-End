@@ -2,10 +2,10 @@ import React, { useState, useRef } from "react";
 import ExpandableShopBar from "./ExpandableShopBar";
 import chevronRight from "../../assets/chevron-right.svg";
 // import chevronDown from "../../assets/chevron-down.svg";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 function ExpandableMenu(props) {
-  const history = useHistory();
+  const history = useNavigate();
   const shopChevron = useRef(null);
   const { toggleOpen } = props;
   const [shopBarOpen, setShopBarOpen] = useState(false);

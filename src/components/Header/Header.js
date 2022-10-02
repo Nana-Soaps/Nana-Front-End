@@ -3,14 +3,14 @@ import HeaderSmall from "./HeaderSmall";
 import ShopBar from "./ShopBar";
 import shoppingBag from "../../assets/bag.svg";
 import user from "../../assets/user.svg";
-import { Link, useHistory } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { connect } from "react-redux";
 import { toggleCartOpen } from "../../actions";
 import { disableBodyScroll } from "body-scroll-lock";
 
 function Header(props) {
   const [shopBarOpen, setShopBarOpen] = useState(false);
-  const history = useHistory();
+  const history = useNavigate();
   const clickShop = () => {
     setShopBarOpen(() => !shopBarOpen);
   };

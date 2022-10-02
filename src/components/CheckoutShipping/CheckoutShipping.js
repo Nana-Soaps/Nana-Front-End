@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import ShippingCheckbox from "./components/ShippingCheckbox";
 import CartSummary from "./components/CartSummary";
 import Contact from "./components/Contact";
@@ -45,7 +45,7 @@ function CheckoutShipping(props) {
         console.dir(err);
       });
   }, []);
-  const history = useHistory();
+  const push = useNavigate();
   const [mainError, setMainError] = useState(false);
   const checkIfValid = async (data) => {
     const valid = await formSchema.isValid(data);
@@ -64,8 +64,7 @@ function CheckoutShipping(props) {
   };
   const handleBack = (e) => {
     e.preventDefault();
-    history.goBack();
-    // console.log("back");
+    push(-1);
   };
 
   const handlePayment = async (e) => {
@@ -73,7 +72,7 @@ function CheckoutShipping(props) {
     const valid = await checkIfValid(props.order);
     console.log(valid);
     if (valid) {
-      history.push("/checkout/payment");
+      push("/checkout/payment");
     } else {
       setMainError(true);
     }

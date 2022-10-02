@@ -9,13 +9,11 @@ function Hero(props) {
         <div className="text-wrap">
           <h1 class="hero-text">All Natural Handmade Soaps</h1>
           <Link
-            to={{
-              pathname: "/shop",
-              state: {
-                category: {
-                  category_name: "Full Catalog",
-                  products: props.products,
-                },
+            to="/shop"
+            state={{
+              category: {
+                category_name: "Full Catalog",
+                products: props.products,
               },
             }}
             className="text-decoration-none"

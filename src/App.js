@@ -18,7 +18,7 @@ import {
 } from "./components";
 import "./styles/Header.scss";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Route, Switch } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import { connect } from "react-redux";
 import { setCategories, setProducts } from "./actions";
 import { Elements } from "@stripe/react-stripe-js";
@@ -26,10 +26,11 @@ import { stripePromise } from "./lib/stripe";
 
 function App(props) {
   const [stripe, setStripe] = useState();
-  stripePromise.then((res) => {
-    setStripe(res);
-    console.log(stripe);
-  });
+  if (!stripe) {
+    stripePromise.then((res) => {
+      setStripe(res);
+    });
+  }
   useEffect(() => {
     axios
       .get("https://nanasoapsbackend.herokuapp.com/api/products/categories")
@@ -62,46 +63,36 @@ function App(props) {
   return (
     <div className="App">
       <Header />
-      <Switch>
-        <Route exact path="/">
-          <MainDash />
-        </Route>
-        <Route exact path="/shop">
-          <Shop />
-        </Route>
-        <Route exact path="/shop/item">
-          <ItemPage />
-        </Route>
-        <Route exact path="/login">
-          <Login />
-        </Route>
-        <Route exact path="/signup">
-          <Signup />
-        </Route>
-        <Route exact path="/checkout/information">
-          <CheckoutInformation />
-        </Route>
-        <Route exact path="/checkout/shipping">
-          <CheckoutShipping />
-        </Route>
-        <Route exact path="/checkout/payment">
-          <Elements stripe={stripePromise}>
-            <CheckoutPayment />
-          </Elements>
-        </Route>
-        <Route exact path="/checkout/confirmation">
-          <CheckoutConfirmation />
-        </Route>
-        <Route exact path="/our-story">
-          <OurStory />
-        </Route>
-        <Route exact path="/contact">
-          <ContactUs />
-        </Route>
-        <Route exact path="/faq">
-          <FAQ />
-        </Route>
-      </Switch>
+      <Routes>
+        <Route exact path="/" element={<MainDash />} />
+        <Route exact path="/shop" element={<Shop />} />
+        <Route exact path="/shop/item" element={<ItemPage />} />
+        <Route exact path="/login" element={<Login />} />
+        <Route exact path="/signup" element={<Signup />} />
+        <Route
+          exact
+          path="/checkout/information"
+          element={<CheckoutInformation />}
+        />
+        <Route exact path="/checkout/shipping" element={<CheckoutShipping />} />
+        <Route
+          exact
+          path="/checkout/payment"
+          element={
+            <Elements stripe={stripePromise}>
+              <CheckoutPayment />
+            </Elements>
+          }
+        ></Route>
+        <Route
+          exact
+          path="/checkout/confirmation"
+          element={<CheckoutConfirmation />}
+        />
+        <Route exact path="/our-story" element={<OurStory />} />
+        <Route exact path="/contact" element={<ContactUs />} />
+        <Route exact path="/faq" element={<FAQ />} />
+      </Routes>
       {props.cartOpen && <Cart />}
     </div>
   );

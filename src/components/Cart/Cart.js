@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import "../../styles/Cart.scss";
 import { connect } from "react-redux";
 import { toggleCartOpen } from "../../actions";
@@ -7,7 +7,7 @@ import { enableBodyScroll } from "body-scroll-lock";
 import CartItem from "./components/CartItem";
 
 function Cart(props) {
-  const { push } = useHistory();
+  const push = useNavigate();
   const [subtotal, setSubtotal] = useState(0);
   const [btnDisabled, setBtnDisabled] = useState(true);
   let cartWrap = useRef(null);

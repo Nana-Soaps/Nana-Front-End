@@ -10,6 +10,7 @@ function BestsellerCard(props) {
   const { product } = props;
 
   const handleAddToBag = (e) => {
+    console.log("invoked");
     e.preventDefault();
     let itemExists = false;
     let currentProduct = null;
@@ -21,24 +22,26 @@ function BestsellerCard(props) {
     });
 
     if (itemExists) {
-      const newBag = props.bag.map((item) => {
-        if (item.name == currentProduct.name) {
-          item.quantity += 1;
-        }
-        return item;
-      });
-      console.log(newBag);
-      props.setBag(newBag);
+      // const newBag = props.bag.madp((item) => {
+      //   if (item.name == currentProduct.name) {
+      //     item.quantity += 1;
+      //   }
+      //   return item;
+      // });
+      // console.log(newBag);
+      // props.setBag(newBag);
     } else {
+      console.log(props.setBag);
       props.setBag([...props.bag, { ...product, quantity: 1 }]);
     }
-    props.toggleCartOpen(true);
+    // props.toggleCartOpen(true);
   };
   return (
     <div className="bestsellerCard p-1">
       <div className="itemWrap">
         <Link
-          to={{ pathname: "/shop/item", state: { product: product } }}
+          to="/shop/item"
+          state={{ product }}
           className="text-decoration-none"
         >
           <div className="imgWrap border rounded d-flex justify-content-center align-items-center">
@@ -51,7 +54,8 @@ function BestsellerCard(props) {
         </Link>
         <div className="textWrap rounded">
           <Link
-            to={{ pathname: "/shop/item", state: { product: product } }}
+            to="/shop/item"
+            state={{ product: product }}
             className="text-decoration-none"
           >
             <h5 className="name px-1">{product.name}</h5>

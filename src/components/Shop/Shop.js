@@ -9,6 +9,7 @@ import "../../styles/Shop.scss";
 
 function Shop(props) {
   const location = useLocation();
+  console.log(location);
   const { category } = location.state;
   const [filterBarActive, setFilterBarActive] = useState(false);
 

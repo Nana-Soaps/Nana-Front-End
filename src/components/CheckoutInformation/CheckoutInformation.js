@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import "../../styles/CheckoutInformation.scss";
 import chevronLeftClose from "../../assets/chevron-left-close.svg";
 import { connect } from "react-redux";
@@ -52,7 +52,7 @@ function CheckoutInformation(props) {
   const [errors, setErrors] = useState({});
   const [mainError, setMainError] = useState(false);
 
-  const history = useHistory();
+  const push = useNavigate();
 
   const checkIfValid = async () => {
     const valid = await formSchema.isValid(formData);
@@ -81,7 +81,7 @@ function CheckoutInformation(props) {
     console.log(errors);
   };
   const handleBack = () => {
-    history.goBack();
+    push(-1);
   };
 
   const handleShipping = async (e) => {
@@ -89,7 +89,7 @@ function CheckoutInformation(props) {
     const valid = await checkIfValid();
     if (valid) {
       props.setOrder(formData);
-      history.push("/checkout/shipping");
+      push("/checkout/shipping");
     } else {
       setMainError(true);
     }

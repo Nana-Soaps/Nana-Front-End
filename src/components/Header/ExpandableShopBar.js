@@ -8,7 +8,7 @@ function ExpandableShopBar(props) {
     <div className={`expandableShopBar ${shopBarOpen ? "shopBarOpen" : ""}`}>
       {props.categories.map((category) => {
         return (
-          <Link to={{ pathname: "/shop", state: { category: category } }}>
+          <Link to="/shop" state={{ category: category }}>
             <p onClick={toggleOpen}>{category.category_name}</p>
           </Link>
         );

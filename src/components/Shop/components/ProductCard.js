@@ -36,7 +36,8 @@ function ProductCard(props) {
     <div className="itemCard p-1">
       <div className="itemWrap">
         <Link
-          to={{ pathname: "/shop/item", state: { product: product } }}
+          to="/shop/item"
+          state={{ product }}
           className="text-decoration-none"
         >
           <div className="imgWrap border rounded d-flex justify-content-center align-items-center">
@@ -49,7 +50,8 @@ function ProductCard(props) {
         </Link>
         <div className="textWrap rounded">
           <Link
-            to={{ pathname: "/shop/item", state: { product: product } }}
+            to="/shop/item"
+            state={{ product }}
             className="text-decoration-none"
           >
             <h5 className="name">{product.name}</h5>

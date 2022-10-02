@@ -3,7 +3,7 @@ import CartSummary from "../CheckoutShipping/components/CartSummary";
 import Contact from "../CheckoutShipping/components/Contact";
 import "../../styles/CheckoutPayment.scss";
 import chevronLeftClose from "../../assets/chevron-left-close.svg";
-import { Link, useHistory } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { connect } from "react-redux";
 import { CircularProgress } from "@mui/material";
@@ -18,7 +18,7 @@ function CheckoutPayment(props) {
   const [success, setSuccess] = useState(false); // if payment is successful we want to show something
   const [postBody, setPostBody] = useState({});
   const [isFetching, setIsFetching] = useState(false);
-  const history = useHistory();
+  const history = useNavigate();
   const stripe = useStripe();
   const elements = useElements();
 
