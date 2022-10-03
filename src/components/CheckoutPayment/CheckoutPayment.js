@@ -69,7 +69,7 @@ function CheckoutPayment(props) {
     delete order.shipping_cost;
     console.log(order);
     axios
-      .post("https://nanasoapsbackend.herokuapp.com/api/orders", { order, bag })
+      .post("https://nana-be.up.railway.app//api/orders", { order, bag })
       .then((res) => {
         setIsFetching(false);
         history.push("/checkout/confirmation", { orderId: res.data });

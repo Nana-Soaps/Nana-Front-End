@@ -36,7 +36,7 @@ function CheckoutShipping(props) {
   });
   useEffect(() => {
     axios
-      .get("https://nanasoapsbackend.herokuapp.com/api/orders/shipping-options")
+      .get("https://nana-be.up.railway.app/api/orders/shipping-options")
       .then((res) => {
         console.log(res);
         props.setShippingOptions(res.data);

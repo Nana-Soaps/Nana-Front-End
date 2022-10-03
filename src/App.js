@@ -33,7 +33,7 @@ function App(props) {
   }
   useEffect(() => {
     axios
-      .get("https://nanasoapsbackend.herokuapp.com/api/products/categories")
+      .get("https://nana-be.up.railway.app/api/products/categories")
       .then((res) => {
         console.log(res);
         props.setCategories(res.data);
