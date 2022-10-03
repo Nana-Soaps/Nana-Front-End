@@ -21,7 +21,7 @@ function CheckoutConfirmation(props) {
       .catch((err) => {
         console.dir(err);
       });
-  });
+  }, []);
   return (
     <div className="checkoutConfirmation py-5">
       <div className="container">

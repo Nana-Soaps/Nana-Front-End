@@ -69,10 +69,10 @@ function CheckoutPayment(props) {
     delete order.shipping_cost;
     console.log(order);
     axios
-      .post("https://nana-be.up.railway.app//api/orders", { order, bag })
+      .post("https://nana-be.up.railway.app/api/orders", { order, bag })
       .then((res) => {
         setIsFetching(false);
-        push("/checkout/confirmation", { orderId: res.data });
+        push("/checkout/confirmation", { state: { orderId: res.data } });
       })
       .catch((err) => {
         console.dir(err);
