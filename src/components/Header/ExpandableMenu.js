@@ -5,7 +5,7 @@ import chevronRight from "../../assets/chevron-right.svg";
 import { useNavigate } from "react-router-dom";
 
 function ExpandableMenu(props) {
-  const history = useNavigate();
+  const push = useNavigate();
   const shopChevron = useRef(null);
   const { toggleOpen } = props;
   const [shopBarOpen, setShopBarOpen] = useState(false);
@@ -17,11 +17,11 @@ function ExpandableMenu(props) {
   };
 
   const handleOurStory = () => {
-    history.push("/our-story");
+    push("/our-story");
     toggleOpen();
   };
   const handleContactUs = () => {
-    history.push("/contact");
+    push("/contact");
     toggleOpen();
   };
 

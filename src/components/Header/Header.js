@@ -10,7 +10,7 @@ import { disableBodyScroll } from "body-scroll-lock";
 
 function Header(props) {
   const [shopBarOpen, setShopBarOpen] = useState(false);
-  const history = useNavigate();
+  const push = useNavigate();
   const clickShop = () => {
     setShopBarOpen(() => !shopBarOpen);
   };
@@ -20,12 +20,12 @@ function Header(props) {
   };
 
   const handleOurStory = () => {
-    history.push("/our-story");
+    push("/our-story");
     setShopBarOpen(false);
   };
 
   const handleContactUs = () => {
-    history.push("/contact");
+    push("/contact");
     setShopBarOpen(false);
   };
   return (

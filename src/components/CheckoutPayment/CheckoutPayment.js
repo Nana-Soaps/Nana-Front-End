@@ -104,7 +104,7 @@ function CheckoutPayment(props) {
           postOrderToDb();
           // setIsFetching(false);
           // console.log(res);
-          // history.push("/checkout/confirmation");
+          // push("/checkout/confirmation");
         })
         .catch((err) => {
           setIsFetching(false);
