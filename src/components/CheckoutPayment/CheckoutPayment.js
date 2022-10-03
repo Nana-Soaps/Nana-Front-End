@@ -18,7 +18,7 @@ function CheckoutPayment(props) {
   const [success, setSuccess] = useState(false); // if payment is successful we want to show something
   const [postBody, setPostBody] = useState({});
   const [isFetching, setIsFetching] = useState(false);
-  const history = useNavigate();
+  const push = useNavigate();
   const stripe = useStripe();
   const elements = useElements();
 
@@ -72,7 +72,7 @@ function CheckoutPayment(props) {
       .post("https://nana-be.up.railway.app//api/orders", { order, bag })
       .then((res) => {
         setIsFetching(false);
-        history.push("/checkout/confirmation", { orderId: res.data });
+        push("/checkout/confirmation", { orderId: res.data });
       })
       .catch((err) => {
         console.dir(err);
@@ -116,7 +116,7 @@ function CheckoutPayment(props) {
     }
   };
   const handleBack = () => {
-    history.goBack();
+    push(-1);
   };
 
   return (
