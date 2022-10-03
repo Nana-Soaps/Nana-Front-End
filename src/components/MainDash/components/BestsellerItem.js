@@ -22,19 +22,18 @@ function BestsellerCard(props) {
     });
 
     if (itemExists) {
-      // const newBag = props.bag.madp((item) => {
-      //   if (item.name == currentProduct.name) {
-      //     item.quantity += 1;
-      //   }
-      //   return item;
-      // });
-      // console.log(newBag);
-      // props.setBag(newBag);
+      const newBag = props.bag.map((item) => {
+        if (item.name == currentProduct.name) {
+          item.quantity += 1;
+        }
+        return item;
+      });
+      console.log(newBag);
+      props.setBag(newBag);
     } else {
-      console.log(props.setBag);
       props.setBag([...props.bag, { ...product, quantity: 1 }]);
     }
-    // props.toggleCartOpen(true);
+    props.toggleCartOpen(true);
   };
   return (
     <div className="bestsellerCard p-1">
