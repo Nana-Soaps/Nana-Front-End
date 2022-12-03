@@ -14,7 +14,8 @@ function CheckoutConfirmation(props) {
   // get the order info based on order ID
   useEffect(() => {
     axios
-      .get(`https://nanasoapsbackend.herokuapp.com/api/orders/${orderId}`)
+
+      .get(`https://nana-be.up.railway.app/api/orders/${orderId}`)
       .then((res) => {
         setOrder(res.data);
       })

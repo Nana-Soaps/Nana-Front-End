@@ -95,7 +95,7 @@ function CheckoutPayment(props) {
     if (!error) {
       const { id } = paymentMethod;
       axios
-        .post("https://nanasoapsbackend.herokuapp.com/api/orders/payment", {
+        .post("https://nana-be.up.railway.app/api/orders/payment", {
           amount: getTotal(props.bag),
           id,
           ...postBody,
