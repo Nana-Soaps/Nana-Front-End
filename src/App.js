@@ -25,6 +25,7 @@ import { Elements } from "@stripe/react-stripe-js";
 import { stripePromise } from "./lib/stripe";
 
 function App(props) {
+  console.log("banana");
   const [stripe, setStripe] = useState();
   if (!stripe) {
     stripePromise.then((res) => {
